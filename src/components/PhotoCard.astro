@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  href: string;
+  image: ImageMetadata;
+  alt: string;
+  title: string;
+  text: string;
+}
+
+const { href, image, alt, title, text } = Astro.props;
+---
+
+<a href={href} class="jf-photo-card">
+  <Image src={image} alt={alt} class="jf-photo" widths={[480, 960]} sizes="(min-width: 768px) 50vw, 100vw" />
+  <div class="jf-photo-card__overlay"></div>
+  <div class="jf-photo-card__text">
+    <h4>{title}</h4>
+    <p>{text}</p>
+  </div>
+</a>

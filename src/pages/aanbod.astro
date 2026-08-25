@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SplitSection from '../components/SplitSection.astro';
+import OfferCard from '../components/OfferCard.astro';
+import { Image } from 'astro:assets';
+import imgHero from '../assets/images/img1.jpg';
+import imgAdemIjs from '../assets/images/IMG_8636.jpeg';
+import imgFysiek from '../assets/images/img4.jpg';
+---
+
+<Layout
+  title="Aanbod — JurrSelf"
+  description="Twee vormen, één ingang: ademwerk en ijsbad, of functionele 1-op-1 fysieke training. Ontdek de JurrSelf Experience en het Traject."
+>
+  <section class="jf-hero jf-hero--page">
+    <Image src={imgHero} alt="Groep tijdens fysieke training" class="jf-hero__media jf-hero__media--soft" widths={[640, 1280, 1920]} sizes="100vw" />
+    <div class="jf-hero__overlay jf-hero__overlay--soft"></div>
+    <div class="jf-hero__content">
+      <p class="jf-eyebrow jf-eyebrow--hero">Aanbod</p>
+      <h1 class="jf-h1">Twee vormen.<br />Eén ingang.</h1>
+    </div>
+  </section>
+
+  <SplitSection id="adem-ijs" image={imgAdemIjs} alt="Ademsessie en ijsbad" imageSide="left" mobileFirst="image" size="tall">
+    <p class="jf-eyebrow">Methode 01</p>
+    <h2 class="jf-h2 jf-h2--tight">Adem + IJs</h2>
+    <p class="jf-body">Een begeleide ademsessie gevolgd door blootstelling aan kou in een ijsbad. Niet als challenge. Niet om te bewijzen hoe sterk je bent.</p>
+    <p class="jf-body">Je observeert wat er in je lichaam gebeurt wanneer spanning ontstaat: ademhaling, spanning, controle, onrust, ontspanning.</p>
+  </SplitSection>
+
+  <SplitSection id="fysieke-training" image={imgFysiek} alt="Herstel na fysieke training" dark imageSide="left" mobileFirst="text" size="tall">
+    <p class="jf-eyebrow jf-eyebrow--on-dark">Methode 02</p>
+    <h2 class="jf-h2 jf-h2--tight">Fysieke Training</h2>
+    <p class="jf-body jf-body--on-dark">Functionele 1-op-1 training: zandzakken, slee, eigen lichaamsgewicht, natuurlijke beweging, fysieke weerstand.</p>
+    <p class="jf-body jf-body--on-dark">Vermoeidheid en weerstand worden bewust ingezet. Onder druk worden automatische reacties zichtbaar, en leer je ze herkennen.</p>
+  </SplitSection>
+
+  <section class="jf-container jf-container--narrow jf-aanbod-principle">
+    <p class="jf-eyebrow jf-eyebrow--gap">Terugkerend principe</p>
+    <h3 class="jf-h3">Flow, Fight, Flight, Freeze</h3>
+    <p class="jf-lead jf-lead--sm">Eerst ervaren. Daarna herkennen. Vervolgens leren bijsturen. Je gaat naar huis met concrete signalen en handvatten, ook te gebruiken buiten de sessie. Het doel is niet afhankelijk worden van een coach. Het doel is jezelf beter leren waarnemen en sturen.</p>
+  </section>
+
+  <section class="jf-container jf-aanbod-book">
+    <p class="jf-eyebrow jf-eyebrow--divider">Boeken</p>
+  </section>
+
+  <section class="jf-container jf-cards jf-pb-lg">
+    <OfferCard
+      title="JurrSelf Experience"
+      meta="90–120 minuten · individueel · direct te boeken"
+      href="/contact?type=experience"
+      ctaLabel="Boek de experience"
+      ctaVariant="dark"
+      large
+    >
+      Eén individuele sessie. Een intensieve eerste ervaring waarin lichaam, ademhaling, weerstand en bewustwording centraal staan.
+    </OfferCard>
+    <OfferCard
+      title="JurrSelf Traject"
+      meta="5 sessies · ± 60 minuten · op maat"
+      href="/contact?type=traject"
+      ctaLabel="Neem contact op"
+      ctaVariant="outline-dark"
+      large
+    >
+      Voor wie verder wil gaan dan één ervaring en de principes echt wil leren herkennen en toepassen. Wat het beste past, bespreken we eerst persoonlijk.
+    </OfferCard>
+  </section>
+</Layout>

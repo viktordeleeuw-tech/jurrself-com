@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// ponytail: placeholders until Viktor supplies the real contact details.
+const whatsappNumber = '+34 6XX XXX XXX';
+const contactEmail = 'info@jurrself.com';
+const whatsappHref = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`;
+---
+
+<Layout
+  title="Contact — JurrSelf"
+  description="Boek je JurrSelf sessie of maak eerst kennis. Vul het formulier in of neem contact op via WhatsApp of e-mail."
+>
+  <section id="kennismaken" class="jf-container jf-contact-hero">
+    <p class="jf-eyebrow">Contact</p>
+    <h1 class="jf-h1 jf-h1--wide">Boek je sessie of<br />maak eerst kennis.</h1>
+    <p class="jf-lead jf-lead--sm jf-max-w-md">Vul het formulier in en we nemen persoonlijk contact met je op om te bespreken wat het beste past, de Experience of het Traject.</p>
+  </section>
+
+  <section class="jf-container jf-contact">
+    <form id="contact-form" class="jf-form">
+      <label class="jf-form__field">
+        Naam
+        <input class="jf-form__input" name="name" required type="text" placeholder="Je naam" />
+      </label>
+      <label class="jf-form__field">
+        E-mail
+        <input class="jf-form__input" name="email" required type="email" placeholder="jij@voorbeeld.nl" />
+      </label>
+      <label class="jf-form__field">
+        Bericht
+        <textarea class="jf-form__input" name="message" rows="4" placeholder="Vertel kort waar je naar op zoek bent, Experience, Traject, of je hebt eerst een vraag."></textarea>
+      </label>
+      <button type="submit" class="jf-btn jf-btn--dark jf-form__submit">Verstuur aanvraag</button>
+    </form>
+
+    <div id="contact-confirm" class="jf-confirm" hidden>
+      <p>Bedankt, <span id="confirm-name"></span>.</p>
+      <p>We nemen zo snel mogelijk persoonlijk contact met je op.</p>
+    </div>
+
+    <div class="jf-contact-info">
+      <div class="jf-contact-info__block">
+        <p>WhatsApp</p>
+        <a href={whatsappHref} class="jf-contact-info__link">{whatsappNumber}</a>
+        <p class="jf-contact-info__note">Voor het Traject bespreken we eerst persoonlijk wat het beste past.</p>
+      </div>
+      <div class="jf-contact-info__block">
+        <p>E-mail</p>
+        <a href={`mailto:${contactEmail}`} class="jf-contact-info__link">{contactEmail}</a>
+      </div>
+      <div class="jf-contact-info__block">
+        <p>Locatie</p>
+        <p class="jf-contact-info__text">Javea, Spanje.<br />Private locatie, adres volgt persoonlijk na boeking.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // ponytail: no backend wired up yet — shows a local thank-you state only.
+  // Swap for a real submit handler (Formspree/Brevo/etc.) when the backend is chosen.
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const confirm = document.getElementById('contact-confirm');
+  const confirmName = document.getElementById('confirm-name');
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const name = (form.elements.namedItem('name') as HTMLInputElement)?.value || 'jij';
+    if (confirmName) confirmName.textContent = name;
+    form.hidden = true;
+    confirm?.removeAttribute('hidden');
+  });
+</script>

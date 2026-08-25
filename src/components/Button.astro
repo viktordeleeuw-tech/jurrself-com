@@ -1,0 +1,17 @@
+---
+interface Props {
+  href: string;
+  variant: 'dark' | 'light' | 'outline-light' | 'outline-dark';
+  small?: boolean;
+  class?: string;
+}
+
+const { href, variant, small = false, class: className } = Astro.props;
+const classes = ['jf-btn', `jf-btn--${variant}`, small && 'jf-btn--sm', className]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<a href={href} class={classes}>
+  <slot />
+</a>

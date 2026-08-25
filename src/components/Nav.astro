@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/images/logo-jurrself-white.png';
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/aanbod', label: 'Aanbod' },
+  { href: '/over-mij', label: 'Over mij' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<nav class="jf-nav" id="site-nav">
+  <a href="/" aria-label="JurrSelf" class="jf-nav__logo">
+    <Image src={logo} alt="JurrSelf" width={112} height={28} />
+  </a>
+  <button
+    type="button"
+    class="jf-nav__burger"
+    id="nav-toggle"
+    aria-expanded="false"
+    aria-controls="nav-panel"
+    aria-label="Menu"
+  >
+    <span></span><span></span><span></span>
+  </button>
+  <div class="jf-nav__right" id="nav-panel">
+    <div class="jf-nav__links">
+      {links.map((link) => <a href={link.href}>{link.label}</a>)}
+    </div>
+    <div class="jf-nav__lang">
+      <a href="#" aria-current="true">NL</a>
+      <span>/</span>
+      <a href="#">EN</a>
+      <span>/</span>
+      <a href="#">ES</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('site-nav');
+  const toggle = document.getElementById('nav-toggle');
+
+  toggle?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('jf-nav--open');
+    toggle.setAttribute('aria-expanded', String(Boolean(open)));
+    document.body.classList.toggle('jf-no-scroll', Boolean(open));
+  });
+
+  document.querySelectorAll('#nav-panel a').forEach((link) => {
+    link.addEventListener('click', () => {
+      nav?.classList.remove('jf-nav--open');
+      toggle?.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('jf-no-scroll');
+    });
+  });
+</script>

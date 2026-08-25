@@ -1,0 +1,53 @@
+@use 'tokens' as *;
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: $color-bg;
+}
+
+body {
+  margin: 0;
+  background: $color-bg;
+  color: $color-ink;
+  font-family: $font-family;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.65;
+  }
+}
+
+::selection {
+  background: $color-ink;
+  color: $color-paper;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+.jf-no-scroll {
+  overflow: hidden;
+}

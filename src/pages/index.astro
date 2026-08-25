@@ -1,0 +1,136 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import SplitSection from '../components/SplitSection.astro';
+import PhotoCard from '../components/PhotoCard.astro';
+import OfferCard from '../components/OfferCard.astro';
+import Button from '../components/Button.astro';
+import imgHero from '../assets/images/hero-jurrself.jpg';
+import imgSplit from '../assets/images/img8.jpg';
+import imgAdemIjs from '../assets/images/IMG_8635.jpeg';
+import imgFysiek from '../assets/images/IMG_6591.JPG';
+import imgJurriaan from '../assets/images/IMG_6912.JPG';
+---
+
+<Layout
+  title="JurrSelf — Get out of your head. Get into your body."
+  description="Ervaar wat er gebeurt wanneer je lichaam onder druk komt. Ademwerk, ijsbad en fysieke training in Javea, begeleid door Jurriaan."
+>
+  <!-- HERO -->
+  <section class="jf-hero jf-hero--full">
+    <Image
+      src={imgHero}
+      alt="Jurriaan tijdens een sessie bij zonsondergang in Javea"
+      class="jf-hero__media"
+      widths={[640, 1280, 1920, 2560]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="jf-hero__overlay"></div>
+    <div class="jf-hero__content">
+      <h1 class="jf-display">GET OUT OF<br />YOUR HEAD.<br />GET INTO<br />YOUR BODY.</h1>
+      <div class="jf-hero__intro">
+        <p class="jf-hero__subtitle">Ervaar wat er gebeurt wanneer je lichaam onder druk komt. Leer de signalen herkennen. Leer ze gebruiken.</p>
+        <div class="jf-hero__actions">
+          <Button href="/contact" variant="light">Boek je sessie</Button>
+          <Button href="/contact#kennismaken" variant="outline-light">Eerst kennismaken</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAAROM JURRSELF -->
+  <section class="jf-container jf-section--intro">
+    <p class="jf-eyebrow">Waarom JurrSelf</p>
+    <h2 class="jf-h2 jf-h2--lg">PRESSURE REVEALS.<br />JE LICHAAM WEET HET EERST.</h2>
+    <p class="jf-lead">Mensen zitten te veel in hun hoofd. JurrSelf brengt je terug naar je lichaam, door fysieke belasting, ademhaling en kou. Niet om te praten over stress. Om te voelen wat er daadwerkelijk gebeurt. Herkennen. Sturen.</p>
+  </section>
+
+  <!-- VAN HOOFD NAAR LICHAAM -->
+  <SplitSection image={imgSplit} alt="Herstel en ademhaling in stilte" dark imageSide="left" mobileFirst="image">
+    <p class="jf-eyebrow jf-eyebrow--on-dark">Van hoofd naar lichaam</p>
+    <h3 class="jf-h3 jf-h3--narrow">Don&rsquo;t think it.<br />Feel it.</h3>
+    <p class="jf-body jf-body--on-dark">Ademhaling. Spanning. Controle. Onrust. Ontspanning. Eerst ervaren. Daarna herkennen. Vervolgens leren bijsturen, niet als theorie, maar als een lijf dat het zelf laat zien.</p>
+  </SplitSection>
+
+  <!-- DE TWEE METHODES -->
+  <section class="jf-container jf-pt-lg jf-pb-md">
+    <p class="jf-eyebrow">De methode</p>
+    <h2 class="jf-h2 jf-h2--wide">Het lichaam als ingang. Twee vormen.</h2>
+    <div class="jf-cards">
+      <PhotoCard
+        href="/aanbod#adem-ijs"
+        image={imgAdemIjs}
+        alt="Ademsessie gevolgd door ijsbad"
+        title="Adem + IJs"
+        text="Ademsessie gevolgd door blootstelling aan kou. Observeren wat er gebeurt wanneer spanning ontstaat."
+      />
+      <PhotoCard
+        href="/aanbod#fysieke-training"
+        image={imgFysiek}
+        alt="Functionele training met zandzakken en slee"
+        title="Fysieke Training"
+        text="Functionele 1-op-1 training met zandzakken, slee en eigen lichaamsgewicht. Weerstand die automatische reacties zichtbaar maakt."
+      />
+    </div>
+  </section>
+
+  <!-- FLOW FIGHT FLIGHT FREEZE -->
+  <section class="jf-container jf-container--narrow jf-pt-md jf-pb-lg jf-border-top">
+    <p class="jf-eyebrow jf-eyebrow--gap">Een terugkerend principe</p>
+    <div class="jf-fff">
+      <div class="jf-fff__item"><span>FLOW</span></div>
+      <div class="jf-fff__item"><span>FIGHT</span></div>
+      <div class="jf-fff__item"><span>FLIGHT</span></div>
+      <div class="jf-fff__item"><span>FREEZE</span></div>
+    </div>
+    <p class="jf-lead jf-lead--narrow jf-mt-lg">Je leert de lichamelijke signalen herkennen die laten zien waar je je bevindt. Eerst ervaren. Daarna herkennen. Vervolgens leren bijsturen, met handvatten die je ook buiten de sessie gebruikt.</p>
+  </section>
+
+  <!-- AANBOD TEASER -->
+  <section class="jf-container jf-pb-lg">
+    <p class="jf-eyebrow jf-eyebrow--gap">Aanbod</p>
+    <div class="jf-cards">
+      <OfferCard
+        title="JurrSelf Experience"
+        meta="90–120 minuten · individueel"
+        href="/contact"
+        ctaLabel="Boek je sessie"
+        ctaVariant="dark"
+      >
+        Een intensieve eerste ervaring waarin lichaam, ademhaling, weerstand en bewustwording centraal staan.
+      </OfferCard>
+      <OfferCard
+        title="JurrSelf Traject"
+        meta="5 sessies · ± 60 minuten"
+        href="/contact"
+        ctaLabel="Neem contact op"
+        ctaVariant="outline-dark"
+      >
+        Voor wie verder wil gaan dan één ervaring en de principes echt wil leren herkennen en toepassen.
+      </OfferCard>
+    </div>
+  </section>
+
+  <!-- JURRIAAN TEASER -->
+  <SplitSection image={imgJurriaan} alt="Jurriaan begeleidt een groepstraining" imageSide="left" mobileFirst="text" size="medium">
+    <p class="jf-eyebrow">Wie begeleidt je</p>
+    <h3 class="jf-h3">Jurriaan</h3>
+    <p class="jf-body">Geen sportschool, geen wellnessconcept, geen traditionele coaching. Jurriaan begeleidt de ervaring, niet als held, niet als goeroe.</p>
+    <a href="/over-mij" class="jf-link-underline">Lees meer over Jurriaan</a>
+  </SplitSection>
+
+  <!-- LOCATIE -->
+  <section class="jf-band">
+    <p class="jf-eyebrow jf-eyebrow--on-dark">Locatie &amp; werkwijze</p>
+    <h2 class="jf-band__title">Javea. Een private plek, zonder onnodige afleiding.</h2>
+    <p class="jf-band__text">Ademwerk en ijsbad vinden plaats op een private locatie. Fysieke training kan ook op een locatie naar jouw wens.</p>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="jf-band jf-band--tall jf-band--transparent">
+    <h2 class="jf-cta-title">BREATHE.<br />MOVE.<br />NOTICE.</h2>
+    <Button href="/contact" variant="dark">Boek je sessie</Button>
+  </section>
+</Layout>

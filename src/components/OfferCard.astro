@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  meta: string;
+  href: string;
+  ctaLabel: string;
+  ctaVariant: 'dark' | 'outline-dark';
+  large?: boolean;
+}
+
+const { title, meta, href, ctaLabel, ctaVariant, large = false } = Astro.props;
+---
+
+<div class={`jf-offer-card${large ? ' jf-offer-card--lg' : ''}`}>
+  <h3>{title}</h3>
+  <p class="jf-offer-card__meta">{meta}</p>
+  <p class="jf-offer-card__body"><slot /></p>
+  <a href={href} class={`jf-btn jf-btn--${ctaVariant}${large ? '' : ' jf-btn--sm'}`}>{ctaLabel}</a>
+</div>

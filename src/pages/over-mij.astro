@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import { Image } from 'astro:assets';
+import imgHero from '../assets/images/img7.jpg';
+import imgLeft from '../assets/images/IMG_6913.JPG';
+import imgRight from '../assets/images/IMG_6591.JPG';
+---
+
+<Layout
+  title="Over mij — JurrSelf"
+  description="Jurriaan begeleidt de JurrSelf ervaring: geen sportschool, geen wellnessconcept, geen traditionele coaching. Het lichaam als ingang."
+>
+  <section class="jf-hero jf-hero--page-tall">
+    <Image src={imgHero} alt="Jurriaan bij de kust in Javea" class="jf-hero__media jf-hero__media--medium" widths={[640, 1280, 1920]} sizes="100vw" />
+    <div class="jf-hero__overlay jf-hero__overlay--medium"></div>
+    <div class="jf-hero__content">
+      <p class="jf-eyebrow jf-eyebrow--hero">Over mij</p>
+      <h1 class="jf-h1">Jurriaan</h1>
+    </div>
+  </section>
+
+  <section class="jf-container jf-container--prose jf-over-mij-intro">
+    <h2 class="jf-h2--intro">Geen sportschool, geen wellnessconcept, geen traditionele coaching.</h2>
+    <div class="jf-prose">
+      <p class="jf-body jf-body--lg">Ik geloof dat mensen te veel in hun hoofd zitten. Niet omdat ze vastgelopen zijn, vaak functioneren ze prima. Maar er is meer te halen uit het contact met je eigen lichaam.</p>
+      <p class="jf-body jf-body--lg">Met JurrSelf gebruik ik het lichaam als ingang: fysieke belasting, ademhaling en kou maken voelbaar wat er gebeurt zodra er druk ontstaat. Ik begeleid die ervaring, ik sta niet op het podium.</p>
+      <p class="jf-body jf-body--lg">Het doel is niet dat je afhankelijk wordt van mij. Het doel is dat je jezelf beter leert waarnemen en sturen, met handvatten die je overal kunt gebruiken.</p>
+    </div>
+  </section>
+
+  <section class="jf-split jf-split--gallery">
+    <div class="jf-split__media">
+      <Image src={imgLeft} alt="Jurriaan begeleidt een sessie" class="jf-photo" widths={[480, 960, 1280]} sizes="(min-width: 768px) 50vw, 100vw" />
+    </div>
+    <div class="jf-split__media">
+      <Image src={imgRight} alt="Fysieke training bij de kust" class="jf-photo" widths={[480, 960, 1280]} sizes="(min-width: 768px) 50vw, 100vw" />
+    </div>
+  </section>
+
+  <section class="jf-band jf-band--tall">
+    <h2 class="jf-cta-title jf-cta-title--medium">Klaar om te voelen<br />wat je lichaam weet?</h2>
+    <Button href="/contact" variant="light">Boek je sessie</Button>
+  </section>
+</Layout>

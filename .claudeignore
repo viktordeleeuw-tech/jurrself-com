@@ -1,0 +1,78 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+.astro/
+build/
+out/
+
+# Environment & credentials
+.env
+.env.local
+.env.*.local
+.env.production.local
+
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# IDEs & editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Deployment & hosting
+.vercel/
+.vercelignore
+.netlify/
+.netlifyignore
+
+# Logs & temp
+*.log
+*.logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Cache
+.cache/
+.turbo/
+.next/
+tsconfig.tsbuildinfo
+
+# User uploads & temp files
+public/uploads/
+temp/
+tmp/
+cache/
+.tmp/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+desktop.ini
+
+# Database & backups
+*.db
+*.sqlite
+*.sqlite3
+*.backup
+*.bak
+
+# Misc
+.env.example (unless you want to include it)

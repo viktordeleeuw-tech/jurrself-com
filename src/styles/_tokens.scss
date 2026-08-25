@@ -1,0 +1,40 @@
+@use 'sass:map';
+
+$font-family: 'Archivo', Helvetica, Arial, sans-serif;
+
+$color-bg: oklch(0.975 0.004 75);
+$color-ink: oklch(0.15 0.006 75);
+$color-charcoal: oklch(0.14 0.006 75);
+$color-paper: oklch(0.98 0.004 75);
+$color-paper-soft: oklch(0.96 0.004 75);
+$color-input-bg: oklch(0.99 0.002 75);
+
+$gray: (
+  30: oklch(0.3 0.006 75),
+  36: oklch(0.36 0.006 75),
+  40: oklch(0.4 0.006 75),
+  45: oklch(0.45 0.006 75),
+  48: oklch(0.48 0.006 75),
+  50: oklch(0.5 0.006 75),
+  55: oklch(0.55 0.006 75),
+  60: oklch(0.6 0.006 75),
+  70: oklch(0.7 0.006 75),
+  75: oklch(0.75 0.006 75),
+  82: oklch(0.82 0.006 75),
+  85: oklch(0.85 0.006 75),
+  88: oklch(0.88 0.006 75),
+  92: oklch(0.92 0.006 75),
+);
+
+@function gray($tone) {
+  @return map.get($gray, $tone);
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+// ponytail: design only defines one breakpoint (768px); add a desktop
+// mixin here when a page actually needs 1024px+ rules.
