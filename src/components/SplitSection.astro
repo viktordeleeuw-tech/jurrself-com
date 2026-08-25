@@ -32,7 +32,7 @@ const textClass = `jf-split__text jf-order-${imageSide === 'left' ? '2' : '1'}${
     mobileFirst === 'image' ? (
       <Fragment>
         <div class={mediaClass}>
-          <Image src={image} alt={alt} class="jf-photo" widths={[480, 960, 1280]} sizes="(min-width: 768px) 50vw, 100vw" />
+          <Image src={image} alt={alt} class="jf-photo" width={1280} widths={[480, 960, 1280]} sizes="(min-width: 768px) 50vw, 100vw" />
         </div>
         <div class={textClass}>
           <slot />
@@ -44,7 +44,7 @@ const textClass = `jf-split__text jf-order-${imageSide === 'left' ? '2' : '1'}${
           <slot />
         </div>
         <div class={mediaClass}>
-          <Image src={image} alt={alt} class="jf-photo" widths={[480, 960, 1280]} sizes="(min-width: 768px) 50vw, 100vw" />
+          <Image src={image} alt={alt} class="jf-photo" width={1280} widths={[480, 960, 1280]} sizes="(min-width: 768px) 50vw, 100vw" />
         </div>
       </Fragment>
     )

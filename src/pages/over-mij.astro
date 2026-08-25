@@ -12,7 +12,16 @@ import imgRight from '../assets/images/IMG_6591.JPG';
   description="Jurriaan begeleidt de JurrSelf ervaring: geen sportschool, geen wellnessconcept, geen traditionele coaching. Het lichaam als ingang."
 >
   <section class="jf-hero jf-hero--page-tall">
-    <Image src={imgHero} alt="Jurriaan bij de kust in Javea" class="jf-hero__media jf-hero__media--medium" widths={[640, 1280, 1920]} sizes="100vw" />
+    <Image
+      src={imgHero}
+      alt="Jurriaan bij de kust in Javea"
+      class="jf-hero__media jf-hero__media--medium"
+      width={1920}
+      widths={[640, 1280, 1920]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
     <div class="jf-hero__overlay jf-hero__overlay--medium"></div>
     <div class="jf-hero__content">
       <p class="jf-eyebrow jf-eyebrow--hero">Over mij</p>
@@ -31,10 +40,10 @@ import imgRight from '../assets/images/IMG_6591.JPG';
 
   <section class="jf-split jf-split--gallery">
     <div class="jf-split__media">
-      <Image src={imgLeft} alt="Jurriaan begeleidt een sessie" class="jf-photo" widths={[480, 960, 1280]} sizes="(min-width: 768px) 50vw, 100vw" />
+      <Image src={imgLeft} alt="Jurriaan begeleidt een sessie" class="jf-photo" width={1280} widths={[480, 960, 1280]} sizes="(min-width: 768px) 50vw, 100vw" />
     </div>
     <div class="jf-split__media">
-      <Image src={imgRight} alt="Fysieke training bij de kust" class="jf-photo" widths={[480, 960, 1280]} sizes="(min-width: 768px) 50vw, 100vw" />
+      <Image src={imgRight} alt="Fysieke training bij de kust" class="jf-photo" width={1280} widths={[480, 960, 1280]} sizes="(min-width: 768px) 50vw, 100vw" />
     </div>
   </section>
 

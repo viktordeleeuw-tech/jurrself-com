@@ -14,7 +14,7 @@ const { href, image, alt, title, text } = Astro.props;
 ---
 
 <a href={href} class="jf-photo-card">
-  <Image src={image} alt={alt} class="jf-photo" widths={[480, 960]} sizes="(min-width: 768px) 50vw, 100vw" />
+  <Image src={image} alt={alt} class="jf-photo" width={960} widths={[480, 960]} sizes="(min-width: 768px) 50vw, 100vw" />
   <div class="jf-photo-card__overlay"></div>
   <div class="jf-photo-card__text">
     <h4>{title}</h4>

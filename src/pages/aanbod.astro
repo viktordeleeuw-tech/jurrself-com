@@ -13,7 +13,16 @@ import imgFysiek from '../assets/images/img4.jpg';
   description="Twee vormen, één ingang: ademwerk en ijsbad, of functionele 1-op-1 fysieke training. Ontdek de JurrSelf Experience en het Traject."
 >
   <section class="jf-hero jf-hero--page">
-    <Image src={imgHero} alt="Groep tijdens fysieke training" class="jf-hero__media jf-hero__media--soft" widths={[640, 1280, 1920]} sizes="100vw" />
+    <Image
+      src={imgHero}
+      alt="Groep tijdens fysieke training"
+      class="jf-hero__media jf-hero__media--soft"
+      width={1920}
+      widths={[640, 1280, 1920]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
     <div class="jf-hero__overlay jf-hero__overlay--soft"></div>
     <div class="jf-hero__content">
       <p class="jf-eyebrow jf-eyebrow--hero">Aanbod</p>
