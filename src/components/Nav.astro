@@ -25,6 +25,9 @@ const links = [
     <span></span><span></span><span></span>
   </button>
   <div class="jf-nav__right" id="nav-panel">
+    <button type="button" class="jf-nav__close" id="nav-close" aria-label="Sluit menu">
+      <span></span><span></span>
+    </button>
     <div class="jf-nav__links">
       {links.map((link) => <a href={link.href}>{link.label}</a>)}
     </div>
@@ -43,6 +46,7 @@ const links = [
   const nav = document.getElementById('site-nav');
   const toggle = document.getElementById('nav-toggle');
   const backdrop = document.getElementById('nav-backdrop');
+  const closeBtn = document.getElementById('nav-close');
 
   const closeMenu = () => {
     nav?.classList.remove('jf-nav--open');
@@ -57,6 +61,7 @@ const links = [
   });
 
   backdrop?.addEventListener('click', closeMenu);
+  closeBtn?.addEventListener('click', closeMenu);
 
   document.querySelectorAll('#nav-panel a').forEach((link) => {
     link.addEventListener('click', closeMenu);
