@@ -36,11 +36,19 @@ const links = [
       <a href="#">ES</a>
     </div>
   </div>
+  <div class="jf-nav__backdrop" id="nav-backdrop"></div>
 </nav>
 
 <script>
   const nav = document.getElementById('site-nav');
   const toggle = document.getElementById('nav-toggle');
+  const backdrop = document.getElementById('nav-backdrop');
+
+  const closeMenu = () => {
+    nav?.classList.remove('jf-nav--open');
+    toggle?.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('jf-no-scroll');
+  };
 
   toggle?.addEventListener('click', () => {
     const open = nav?.classList.toggle('jf-nav--open');
@@ -48,11 +56,9 @@ const links = [
     document.body.classList.toggle('jf-no-scroll', Boolean(open));
   });
 
+  backdrop?.addEventListener('click', closeMenu);
+
   document.querySelectorAll('#nav-panel a').forEach((link) => {
-    link.addEventListener('click', () => {
-      nav?.classList.remove('jf-nav--open');
-      toggle?.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('jf-no-scroll');
-    });
+    link.addEventListener('click', closeMenu);
   });
 </script>
