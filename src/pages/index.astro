@@ -10,6 +10,10 @@ import imgSplit from '../assets/images/herstel-ademhaling-stilte.jpg';
 import imgAdemIjs from '../assets/images/ademsessie-ijsbad.jpeg';
 import imgFysiek from '../assets/images/fysieke-training-zandzakken-slee.jpg';
 import imgJurriaan from '../assets/images/jurriaan-groepstraining.jpg';
+import imgGallery1 from '../assets/images/sleeptraining-sandbag-parking.jpg';
+import imgGallery2 from '../assets/images/herstel-na-sessie-ontspanning.jpg';
+import imgGallery3 from '../assets/images/ademhaling-voorbereiding-zwembad.jpg';
+import imgGallery4 from '../assets/images/sandbag-wandeling-zonsondergang-javea.jpg';
 ---
 
 <Layout
@@ -121,6 +125,25 @@ import imgJurriaan from '../assets/images/jurriaan-groepstraining.jpg';
     <p class="jf-body">Geen sportschool, geen wellnessconcept, geen traditionele coaching. Jurriaan begeleidt de ervaring, niet als held, niet als goeroe.</p>
     <a href="/over-mij" class="jf-link-underline">Lees meer over Jurriaan</a>
   </SplitSection>
+
+  <!-- IN BEELD -->
+  <section class="jf-container jf-pt-lg jf-pb-lg">
+    <p class="jf-eyebrow jf-eyebrow--gap">In beeld</p>
+    <div class="jf-gallery">
+      <div class="jf-gallery__item">
+        <Image src={imgGallery1} alt="Functionele training met slee in Javea" class="jf-photo" width={640} widths={[320, 480, 640]} sizes="(min-width: 768px) 25vw, 50vw" />
+      </div>
+      <div class="jf-gallery__item">
+        <Image src={imgGallery2} alt="Herstel en ontspanning na de sessie" class="jf-photo" width={640} widths={[320, 480, 640]} sizes="(min-width: 768px) 25vw, 50vw" />
+      </div>
+      <div class="jf-gallery__item">
+        <Image src={imgGallery3} alt="Ademhaling voorbereiden bij het zwembad" class="jf-photo" width={640} widths={[320, 480, 640]} sizes="(min-width: 768px) 25vw, 50vw" />
+      </div>
+      <div class="jf-gallery__item">
+        <Image src={imgGallery4} alt="Sandbag training tijdens zonsondergang in Javea" class="jf-photo" width={640} widths={[320, 480, 640]} sizes="(min-width: 768px) 25vw, 50vw" />
+      </div>
+    </div>
+  </section>
 
   <!-- LOCATIE -->
   <section class="jf-band">
