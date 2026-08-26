@@ -423,6 +423,13 @@
   cursor: pointer;
   font-family: $font-family;
 
+  @media (max-width: 767px) {
+    justify-content: center;
+    padding: 14px 18px;
+    letter-spacing: 0.06em;
+    font-size: 12px;
+  }
+
   &--dark {
     background: $color-ink;
     color: $color-paper;
