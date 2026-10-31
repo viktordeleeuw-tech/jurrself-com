@@ -866,6 +866,26 @@
   margin: 0;
 }
 
+.jf-footer__powered {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 12px;
+  color: gray(55);
+  text-align: center;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  img {
+    height: 18px;
+    width: auto;
+    filter: none;
+  }
+}
+
 // ---- contact -------------------------------------------------
 
 .jf-contact-hero {
@@ -1072,3 +1092,83 @@ textarea.jf-form__input {
   margin: 0 auto;
   color: gray(70);
 }
+
+// ---- cookiebanner ---------------------------------------------
+// Accepteren en Weigeren zijn bewust identiek (.jf-btn--dark).
+.cookie-banner {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 100;
+  padding: 16px 5vw;
+  background: $color-paper;
+  border-top: 1px solid gray(88);
+  font-family: $font-family;
+
+  &[hidden] { display: none; }
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__text {
+    flex: 1 1 320px;
+
+    p { margin: 0; font-size: 13px; line-height: 1.5; color: gray(36); }
+    a { text-decoration: underline; }
+  }
+
+  &__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    align-items: center;
+    margin-top: 10px;
+
+    &[hidden] { display: none; }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      .jf-btn { flex: 1; }
+    }
+  }
+
+  .jf-btn { min-height: 40px; padding: 10px 22px; white-space: nowrap; }
+}
+
+.cookie-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: gray(30);
+
+  em { font-style: normal; color: gray(60); }
+  input { accent-color: $color-ink; }
+}
+
+.cookie-link,
+.jf-cookie-open {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.cookie-link { font-size: 12px; text-decoration: underline; }

@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Pagina niet gevonden — JurrSelf" description="Deze pagina bestaat niet (meer)." noindex>
+  <section class="jf-container jf-contact-hero">
+    <p class="jf-eyebrow">404</p>
+    <h1 class="jf-h1 jf-h1--wide">Deze pagina<br />bestaat niet.</h1>
+    <p class="jf-lead jf-lead--sm jf-max-w-md">Misschien is de link veranderd. Ga terug naar het begin of bekijk het aanbod.</p>
+    <p>
+      <Button href="/" variant="dark">Naar home</Button>
+      <Button href="/aanbod" variant="outline-dark">Bekijk aanbod</Button>
+    </p>
+  </section>
+</Layout>

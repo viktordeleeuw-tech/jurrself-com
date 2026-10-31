@@ -1,0 +1,13 @@
+# JurrSelf
+
+> JurrSelf is een begeleide ervaring in Javea (Spanje) waarbij het lichaam de ingang is: ademwerk, ijsbad en fysieke training, begeleid door Jurriaan. Geen sportschool, geen wellnessconcept, geen traditionele coaching.
+
+## Pagina's
+- [Home](https://jurrself.com/): wat JurrSelf is en voor wie.
+- [Aanbod](https://jurrself.com/aanbod): de JurrSelf Experience (ademwerk en ijsbad) en het Traject (functionele 1-op-1 fysieke training).
+- [Over mij](https://jurrself.com/over-mij): Jurriaan en zijn manier van begeleiden.
+- [Contact](https://jurrself.com/contact): sessie boeken of eerst kennismaken, via het formulier, WhatsApp of e-mail.
+
+## Feiten
+- Locatie: Javea, Spanje.
+- Taal van de site: Nederlands.

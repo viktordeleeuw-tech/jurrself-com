@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// ponytail: contactgegevens zijn nog placeholders (zie contact.astro); bedrijfsgegevens (naam, KvK) volgen.
+const contactEmail = 'info@jurrself.com';
+---
+
+<Layout title="Privacy — JurrSelf" description="Hoe JurrSelf omgaat met je gegevens en cookies.">
+  <section class="jf-container jf-contact-hero jf-legal">
+    <p class="jf-eyebrow">Privacy</p>
+    <h1 class="jf-h1 jf-h1--wide">Zo gaan we om<br />met je gegevens.</h1>
+
+    <h2>Wie is verantwoordelijk</h2>
+    <p>JurrSelf, Javea (Spanje). Vragen over je gegevens? Mail naar <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
+
+    <h2>Welke gegevens</h2>
+    <p>Als je contact opneemt via het formulier, WhatsApp of e-mail ontvangen we je naam, contactgegevens en bericht. Daarnaast meten we, alleen met jouw toestemming, hoe de website wordt gebruikt (zie Cookies).</p>
+
+    <h2>Waarvoor</h2>
+    <p>Alleen om te reageren op je vraag of boeking, en om de website te verbeteren. We verkopen of delen je gegevens niet met derden voor marketing.</p>
+
+    <h2>Bewaartermijn</h2>
+    <p>Contactgegevens bewaren we niet langer dan nodig is voor het afhandelen van je vraag of boeking, met een maximum van 2 jaar na het laatste contact, tenzij de wet een langere termijn vereist.</p>
+
+    <h2>Cookies en meten</h2>
+    <p>Noodzakelijke opslag (je cookiekeuze) is altijd actief. Statistieken (Google Analytics, geladen via Google Tag Manager) staan standaard uit en gaan alleen aan als je op Accepteren klikt. We meten dan bijvoorbeeld welke pagina&rsquo;s bezocht worden en of een e-mail-, telefoon- of WhatsApp-link wordt gebruikt. We gebruiken geen advertentie- of marketingcookies.</p>
+    <p>Accepteren en Weigeren zijn even makkelijk, en weigeren heeft geen gevolgen voor het gebruik van de website. Je keuze wordt 6 maanden op je apparaat bewaard; daarna vragen we het opnieuw. Wijzigen of intrekken kan altijd via <strong>Cookie-instellingen</strong> onderaan de pagina. Google kan gegevens buiten de EU verwerken; Google LLC valt onder het EU-US Data Privacy Framework.</p>
+
+    <h2>Rechtsgrond en ontvangers</h2>
+    <p>We verwerken gegevens uit het formulier of e-mail op basis van ons gerechtvaardigd belang om je vraag te beantwoorden en een opdracht uit te voeren. Statistieken verwerken we alleen op basis van jouw toestemming, die je altijd kunt intrekken. Gegevens kunnen worden verwerkt door onze hostingpartij (Vercel), onze e-maildienst (mijn.host) en, alleen met jouw toestemming, Google (Analytics en Tag Manager). Met deze partijen gelden verwerkersafspraken of standaardvoorwaarden.</p>
+
+    <h2>Jouw rechten</h2>
+    <p>Je kunt vragen om inzage, correctie, verwijdering, beperking of overdracht van je gegevens, bezwaar maken, en eerder gegeven toestemming intrekken. Mail naar <a href={`mailto:${contactEmail}`}>{contactEmail}</a>; we reageren binnen 30 dagen. Je mag ook een klacht indienen bij de Autoriteit Persoonsgegevens of de Spaanse toezichthouder (<a href="https://www.aepd.es" target="_blank" rel="noopener">AEPD</a>).</p>
+  </section>
+</Layout>

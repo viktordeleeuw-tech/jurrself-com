@@ -1,0 +1,46 @@
+---
+---
+<div id="cookie-banner" class="cookie-banner" hidden role="dialog" aria-label="Cookie-instellingen" aria-live="polite">
+  <div class="cookie-banner__inner">
+    <div class="cookie-banner__text">
+      <p>Met jouw toestemming gebruiken we analytische cookies om deze website te verbeteren. <a href="/privacy">Privacyverklaring</a></p>
+      <div class="cookie-banner__options" id="cookie-options" hidden>
+        <label class="cookie-check"><input type="checkbox" checked disabled /><span>Noodzakelijk <em>(altijd actief)</em></span></label>
+        <label class="cookie-check"><input type="checkbox" id="cookie-analytics" /><span>Statistieken</span></label>
+        <button class="jf-btn jf-btn--dark" type="button" data-cookie="save">Opslaan</button>
+      </div>
+    </div>
+    <div class="cookie-banner__actions">
+      <button class="jf-btn jf-btn--dark" type="button" data-cookie="accept">Accepteren</button>
+      <button class="jf-btn jf-btn--dark" type="button" data-cookie="reject">Weigeren</button>
+      <button class="cookie-link" type="button" aria-expanded="false" aria-controls="cookie-options" data-cookie="toggle">Instellen</button>
+    </div>
+  </div>
+</div>
+<script is:inline>
+(() => {
+  const KEY = 'jf_cookie_consent', DAYS = 180; // 6 maanden, daarna opnieuw vragen
+  const $ = (id) => document.getElementById(id);
+  const banner = $('cookie-banner'), opts = $('cookie-options'), chk = $('cookie-analytics');
+  const load = () => {
+    try { const d = JSON.parse(localStorage.getItem(KEY) || 'null'); if (!d || Date.now() > d.expires) { localStorage.removeItem(KEY); return null; } return d; } catch { return null; }
+  };
+  const toggle = (open) => {
+    opts.hidden = !(typeof open === 'boolean' ? open : opts.hidden);
+    document.querySelector('.cookie-link').setAttribute('aria-expanded', String(!opts.hidden));
+  };
+  const save = (analytics) => {
+    try { localStorage.setItem(KEY, JSON.stringify({ necessary: true, analytics, expires: Date.now() + DAYS * 864e5 })); } catch (e) {}
+    gtag('consent', 'update', { analytics_storage: analytics ? 'granted' : 'denied' });
+    dataLayer.push({ event: 'consent_update', analytics: analytics ? 'granted' : 'denied' });
+    banner.hidden = true;
+  };
+  const actions = { accept: () => save(true), reject: () => save(false), save: () => save(chk.checked), toggle: () => toggle() };
+  banner.addEventListener('click', (e) => { const b = e.target.closest('[data-cookie]'); if (b) actions[b.dataset.cookie](); });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('[data-cookie-open]')) return;
+    chk.checked = !!load()?.analytics; banner.hidden = false; toggle(true);
+  });
+  if (!load()) banner.hidden = false;
+})();
+</script>
