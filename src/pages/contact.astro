@@ -31,6 +31,7 @@ const whatsappHref = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`;
         Bericht
         <textarea class="jf-form__input" name="message" rows="4" placeholder="Vertel kort waar je naar op zoek bent, Experience, Traject, of je hebt eerst een vraag."></textarea>
       </label>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
       <button type="submit" class="jf-btn jf-btn--dark jf-form__submit">Verstuur aanvraag</button>
     </form>
 
@@ -84,17 +85,26 @@ const whatsappHref = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`;
 </Layout>
 
 <script>
-  // ponytail: no backend wired up yet — shows a local thank-you state only.
-  // Swap for a real submit handler (Formspree/Brevo/etc.) when the backend is chosen.
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const confirm = document.getElementById('contact-confirm');
   const confirmName = document.getElementById('confirm-name');
 
-  form?.addEventListener('submit', (event) => {
+  form?.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const name = (form.elements.namedItem('name') as HTMLInputElement)?.value || 'jij';
-    if (confirmName) confirmName.textContent = name;
-    form.hidden = true;
-    confirm?.removeAttribute('hidden');
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    btn.disabled = true;
+    const data = Object.fromEntries(new FormData(form));
+    try {
+      const r = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || !j.success) throw new Error(j.message || 'Versturen is niet gelukt. Mail naar info@jurrself.com.');
+      if (confirmName) confirmName.textContent = String(data.name || 'jij');
+      form.hidden = true;
+      confirm?.removeAttribute('hidden');
+      (window as any).dataLayer?.push({ event: 'generate_lead' });
+    } catch (e) {
+      alert((e as Error).message);
+      btn.disabled = false;
+    }
   });
 </script>
