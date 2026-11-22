@@ -6,17 +6,22 @@ import '../styles/globals.scss';
 import '../styles/components.scss';
 import { getImage } from 'astro:assets';
 import ogSource from '../assets/images/jurriaan-begeleidt-sessie.jpg';
+import { langs, locales, pagePath, type Lang, type PageKey } from '../i18n/index.ts';
 
 interface Props {
   title: string;
   description: string;
   noindex?: boolean;
+  lang?: Lang;
+  // Pagina-sleutel: zet canonical + hreflang-alternatieven. Zonder (bv. 404) geen alternatieven.
+  page?: PageKey;
 }
 
-const { title, description, noindex = false } = Astro.props;
+const { title, description, noindex = false, lang = 'en', page } = Astro.props;
+const abs = (l: Lang) => new URL(pagePath(l, page), Astro.site).href;
 // GTM laadt alleen als PUBLIC_GTM_ID is gezet (Vercel env, Production). Zonder ID wordt er niets gemeten.
 const gtmId = import.meta.env.PUBLIC_GTM_ID;
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const canonical = page ? abs(lang) : new URL(Astro.url.pathname, Astro.site).href;
 const og = await getImage({ src: ogSource, width: 1200, height: 630, format: 'jpg', quality: 80 });
 const ogUrl = new URL(og.src, Astro.site).href;
 const jsonLd = {
@@ -24,12 +29,12 @@ const jsonLd = {
   '@type': 'WebSite',
   name: 'JurrSelf',
   url: Astro.site?.href,
-  inLanguage: 'nl',
+  inLanguage: lang,
 };
 ---
 
 <!doctype html>
-<html lang="nl">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -42,10 +47,13 @@ const jsonLd = {
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#0e0e0e" />
     <link rel="canonical" href={canonical} />
+    {page && langs.map((l) => <link rel="alternate" hreflang={l} href={abs(l)} />)}
+    {page && <link rel="alternate" hreflang="x-default" href={abs('en')} />}
     {noindex && <meta name="robots" content="noindex" />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="JurrSelf" />
-    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:locale" content={locales[lang]} />
+    {page && langs.filter((l) => l !== lang).map((l) => <meta property="og:locale:alternate" content={locales[l]} />)}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -80,10 +88,10 @@ const jsonLd = {
     )}
   </head>
   <body>
-    <Nav />
+    <Nav lang={lang} page={page} />
     <slot />
-    <Footer />
-    <CookieBanner />
+    <Footer lang={lang} />
+    <CookieBanner lang={lang} />
     <script>import '../scripts/track.ts';</script>
   </body>
 </html>

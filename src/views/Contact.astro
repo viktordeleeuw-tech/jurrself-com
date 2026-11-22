@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t, type Lang } from '../i18n/index.ts';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang).contact;
+
+// ponytail: placeholders until Viktor supplies the real contact details.
+const whatsappNumber = '+34 612 461 622';
+const contactEmail = 'info@jurrself.com';
+const whatsappHref = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`;
+---
+
+<Layout title={d.title} description={d.description} lang={lang} page="contact">
+  <section id="kennismaken" class="jf-container jf-contact-hero">
+    <p class="jf-eyebrow">{d.hero.eyebrow}</p>
+    <h1 class="jf-h1 jf-h1--wide" set:html={d.hero.title} />
+    <p class="jf-lead jf-lead--sm jf-max-w-md">{d.hero.lead}</p>
+  </section>
+
+  <section class="jf-container jf-contact">
+    <form id="contact-form" class="jf-form" data-lang={lang} data-fail={d.form.fail}>
+      <label class="jf-form__field">
+        {d.form.name}
+        <input class="jf-form__input" name="name" required type="text" placeholder={d.form.namePh} />
+      </label>
+      <label class="jf-form__field">
+        {d.form.email}
+        <input class="jf-form__input" name="email" required type="email" placeholder={d.form.emailPh} />
+      </label>
+      <label class="jf-form__field">
+        {d.form.message}
+        <textarea class="jf-form__input" name="message" rows="4" placeholder={d.form.messagePh}></textarea>
+      </label>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
+      <button type="submit" class="jf-btn jf-btn--dark jf-form__submit">{d.form.submit}</button>
+    </form>
+
+    <div id="contact-confirm" class="jf-confirm" hidden>
+      <p id="confirm-thanks" data-tpl={d.confirm.thanks}></p>
+      <p>{d.confirm.text}</p>
+    </div>
+
+    <div class="jf-contact-info">
+      <div class="jf-contact-info__block">
+        <p>{d.info.whatsapp}</p>
+        <a href={whatsappHref} class="jf-contact-info__link">{whatsappNumber}</a>
+        <p class="jf-contact-info__note">{d.info.note}</p>
+      </div>
+      <div class="jf-contact-info__block">
+        <p>{d.info.email}</p>
+        <a href={`mailto:${contactEmail}`} class="jf-contact-info__link">{contactEmail}</a>
+      </div>
+      <div class="jf-contact-info__block">
+        <p>{d.info.location}</p>
+        <p class="jf-contact-info__text" set:html={d.info.locationText} />
+      </div>
+    </div>
+  </section>
+
+  <section class="jf-container jf-container--prose jf-pb-lg">
+    <p class="jf-eyebrow jf-eyebrow--gap">{d.faq.eyebrow}</p>
+    <div class="jf-faq">
+      {d.faq.items.map((item) => (
+        <details class="jf-faq__item">
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const confirm = document.getElementById('contact-confirm');
+  const thanks = document.getElementById('confirm-thanks');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    btn.disabled = true;
+    const data = Object.fromEntries(new FormData(form));
+    try {
+      const r = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...data, lang: form.dataset.lang }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || !j.success) throw new Error(j.message || form.dataset.fail);
+      if (thanks) thanks.textContent = (thanks.dataset.tpl || '').replace('{name}', String(data.name));
+      form.hidden = true;
+      confirm?.removeAttribute('hidden');
+      (window as any).dataLayer?.push({ event: 'generate_lead' });
+    } catch (e) {
+      alert((e as Error).message);
+      btn.disabled = false;
+    }
+  });
+</script>

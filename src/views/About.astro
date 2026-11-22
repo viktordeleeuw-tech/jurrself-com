@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import { Image } from 'astro:assets';
+import { t, pagePath, type Lang } from '../i18n/index.ts';
+import imgHero from '../assets/images/jurriaan-kust-javea.jpg';
+import imgLeft from '../assets/images/jurriaan-begeleidt-sessie.jpg';
+import imgRight from '../assets/images/fysieke-training-zandzakken-slee.jpg';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang).about;
+---
+
+<Layout title={d.title} description={d.description} lang={lang} page="about">
+  <section class="jf-hero jf-hero--page-tall">
+    <Image
+      src={imgHero}
+      alt={d.hero.alt}
+      class="jf-hero__media jf-hero__media--medium"
+      width={1920}
+      widths={[640, 1280, 1920]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="jf-hero__overlay jf-hero__overlay--medium"></div>
+    <div class="jf-hero__content">
+      <p class="jf-eyebrow jf-eyebrow--hero">{d.hero.eyebrow}</p>
+      <h1 class="jf-h1">{d.hero.title}</h1>
+    </div>
+  </section>
+
+  <section class="jf-container jf-container--prose jf-over-mij-intro">
+    <h2 class="jf-h2--intro">{d.intro.title}</h2>
+    <div class="jf-prose">
+      {d.intro.p.map((text) => <p class="jf-body jf-body--lg">{text}</p>)}
+    </div>
+  </section>
+
+  <section class="jf-split jf-split--gallery">
+    <div class="jf-split__media">
+      <Image src={imgLeft} alt={d.gallery.alts[0]} class="jf-photo" width={1280} widths={[480, 960, 1280]} sizes="(min-width: 768px) 50vw, 100vw" />
+    </div>
+    <div class="jf-split__media">
+      <Image src={imgRight} alt={d.gallery.alts[1]} class="jf-photo" width={1280} widths={[480, 960, 1280]} sizes="(min-width: 768px) 50vw, 100vw" />
+    </div>
+  </section>
+
+  <section class="jf-band jf-band--tall">
+    <h2 class="jf-cta-title jf-cta-title--medium" set:html={d.cta.title} />
+    <Button href={pagePath(lang, 'contact')} variant="light">{d.cta.button}</Button>
+  </section>
+</Layout>

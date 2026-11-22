@@ -3,6 +3,12 @@ import nodemailer from 'nodemailer';
 export const config = { runtime: 'nodejs' };
 
 const MAILTO = 'info@jurrself.com';
+// Foutmeldingen per taal (nl/en/es); onbekende taal valt terug op Engels. De mail naar Jurriaan blijft Nederlands.
+const MSG = {
+  nl: { rate: `Te veel aanvragen. Mail naar ${MAILTO}.`, check: 'Controleer naam en e-mailadres.', down: `Het formulier is tijdelijk niet beschikbaar. Mail naar ${MAILTO}.`, fail: `Versturen is niet gelukt. Mail naar ${MAILTO}.` },
+  en: { rate: `Too many requests. Email ${MAILTO}.`, check: 'Please check your name and email address.', down: `The form is temporarily unavailable. Email ${MAILTO}.`, fail: `Sending failed. Email ${MAILTO}.` },
+  es: { rate: `Demasiadas solicitudes. Escribe a ${MAILTO}.`, check: 'Revisa tu nombre y tu correo electrónico.', down: `El formulario no está disponible temporalmente. Escribe a ${MAILTO}.`, fail: `No se ha podido enviar. Escribe a ${MAILTO}.` },
+};
 const hits = new Map();
 // ponytail: in-memory rate limit per instance; use Vercel firewall/KV if abuse shows up
 const rateLimited = (ip) => {
@@ -23,18 +29,19 @@ export default async function handler(req, res, env = process.env, transportFact
     if (new URL(req.headers.origin || '').host !== req.headers.host) return reply(403, { success: false });
   } catch { return reply(403, { success: false }); }
 
-  const ip = String(req.headers['x-forwarded-for'] ?? 'unknown').split(',')[0].trim();
-  if (rateLimited(ip)) return reply(429, { success: false, message: `Te veel aanvragen. Mail naar ${MAILTO}.` });
-
   const b = typeof req.body === 'object' && req.body ? req.body : {};
+  const m = MSG[b.lang] || MSG.en;
+  const ip = String(req.headers['x-forwarded-for'] ?? 'unknown').split(',')[0].trim();
+  if (rateLimited(ip)) return reply(429, { success: false, message: m.rate });
+
   if (b.website) return reply(200, { success: true }); // honeypot: bots niet wijzer maken
   const name = clean(b.name, 100), email = clean(b.email, 200), message = String(b.message ?? '').trim().slice(0, 4000);
-  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return reply(422, { success: false, message: 'Controleer naam en e-mailadres.' });
+  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return reply(422, { success: false, message: m.check });
 
   const { SMTP_HOST, SMTP_USER, SMTP_PASS, SMTP_FROM, CONTACT_EMAIL_DEFAULT } = env;
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !SMTP_FROM || !CONTACT_EMAIL_DEFAULT) {
     console.error('contact: SMTP-variabelen ontbreken');
-    return reply(503, { success: false, message: `Het formulier is tijdelijk niet beschikbaar. Mail naar ${MAILTO}.` });
+    return reply(503, { success: false, message: m.down });
   }
   try {
     const port = Number(env.SMTP_PORT || 587);
@@ -50,6 +57,6 @@ export default async function handler(req, res, env = process.env, transportFact
     return reply(200, { success: true });
   } catch (e) {
     console.error('contact SMTP error:', e.message);
-    return reply(502, { success: false, message: `Versturen is niet gelukt. Mail naar ${MAILTO}.` });
+    return reply(502, { success: false, message: m.fail });
   }
 }

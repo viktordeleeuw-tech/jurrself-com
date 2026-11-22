@@ -1,16 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
+import { pagePath } from '../i18n/index.ts';
 ---
 
-<Layout title="Pagina niet gevonden — JurrSelf" description="Deze pagina bestaat niet (meer)." noindex>
+<Layout title="Page not found — JurrSelf" description="This page does not exist (anymore)." lang="en" noindex>
   <section class="jf-container jf-contact-hero">
     <p class="jf-eyebrow">404</p>
-    <h1 class="jf-h1 jf-h1--wide">Deze pagina<br />bestaat niet.</h1>
-    <p class="jf-lead jf-lead--sm jf-max-w-md">Misschien is de link veranderd. Ga terug naar het begin of bekijk het aanbod.</p>
-    <p>
-      <Button href="/" variant="dark">Naar home</Button>
-      <Button href="/aanbod" variant="outline-dark">Bekijk aanbod</Button>
-    </p>
+    <h1 class="jf-h1 jf-h1--wide">This page<br />does not exist.</h1>
+    <p class="jf-lead jf-lead--sm jf-max-w-md">Maybe the link has changed. Go back to the start or have a look at the offer.</p>
+    <div class="jf-actions">
+      <Button href={pagePath('en')} variant="dark">Back to home</Button>
+      <Button href={pagePath('en', 'offer')} variant="outline-dark">View offer</Button>
+    </div>
   </section>
 </Layout>

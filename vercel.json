@@ -1,0 +1,20 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "^es.*" }],
+      "missing": [{ "type": "cookie", "key": "lang" }],
+      "destination": "/es/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "^nl.*" }],
+      "missing": [{ "type": "cookie", "key": "lang" }],
+      "destination": "/nl/",
+      "permanent": false
+    },
+    { "source": "/aanbod", "destination": "/nl/aanbod", "permanent": true },
+    { "source": "/over-mij", "destination": "/nl/over-mij", "permanent": true }
+  ]
+}

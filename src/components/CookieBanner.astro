@@ -1,19 +1,23 @@
 ---
+import { t, pagePath, type Lang } from '../i18n/index.ts';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = t(lang).cookie;
 ---
-<div id="cookie-banner" class="cookie-banner" hidden role="dialog" aria-label="Cookie-instellingen" aria-live="polite">
+<div id="cookie-banner" class="cookie-banner" hidden role="dialog" aria-label={c.label} aria-live="polite">
   <div class="cookie-banner__inner">
     <div class="cookie-banner__text">
-      <p>Met jouw toestemming gebruiken we analytische cookies om deze website te verbeteren. <a href="/privacy">Privacyverklaring</a></p>
+      <p>{c.text} <a href={pagePath(lang, 'privacy')}>{c.privacy}</a></p>
       <div class="cookie-banner__options" id="cookie-options" hidden>
-        <label class="cookie-check"><input type="checkbox" checked disabled /><span>Noodzakelijk <em>(altijd actief)</em></span></label>
-        <label class="cookie-check"><input type="checkbox" id="cookie-analytics" /><span>Statistieken</span></label>
-        <button class="jf-btn jf-btn--dark" type="button" data-cookie="save">Opslaan</button>
+        <label class="cookie-check"><input type="checkbox" checked disabled /><span>{c.necessary} <em>{c.always}</em></span></label>
+        <label class="cookie-check"><input type="checkbox" id="cookie-analytics" /><span>{c.stats}</span></label>
+        <button class="jf-btn jf-btn--dark" type="button" data-cookie="save">{c.save}</button>
       </div>
     </div>
     <div class="cookie-banner__actions">
-      <button class="jf-btn jf-btn--dark" type="button" data-cookie="accept">Accepteren</button>
-      <button class="jf-btn jf-btn--dark" type="button" data-cookie="reject">Weigeren</button>
-      <button class="cookie-link" type="button" aria-expanded="false" aria-controls="cookie-options" data-cookie="toggle">Instellen</button>
+      <button class="jf-btn jf-btn--dark" type="button" data-cookie="accept">{c.accept}</button>
+      <button class="jf-btn jf-btn--dark" type="button" data-cookie="reject">{c.reject}</button>
+      <button class="cookie-link" type="button" aria-expanded="false" aria-controls="cookie-options" data-cookie="toggle">{c.configure}</button>
     </div>
   </div>
 </div>

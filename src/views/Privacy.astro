@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t, type Lang } from '../i18n/index.ts';
+
+// ponytail: contactgegevens zijn nog placeholders (zie contact.astro); bedrijfsgegevens (naam, KvK) volgen.
+const contactEmail = 'info@jurrself.com';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang).privacy;
+// Placeholders in de tekst worden links; tekst komt uit de eigen taalbestanden (vertrouwd).
+const fill = (text: string) =>
+  text
+    .replace('{email}', `<a href="mailto:${contactEmail}">${contactEmail}</a>`)
+    .replace('{aepd}', '<a href="https://www.aepd.es" target="_blank" rel="noopener">AEPD</a>');
+---
+
+<Layout title={d.title} description={d.description} lang={lang} page="privacy">
+  <section class="jf-container jf-contact-hero jf-legal">
+    <p class="jf-eyebrow">{d.eyebrow}</p>
+    <h1 class="jf-h1 jf-h1--wide" set:html={d.heading} />
+
+    {d.sections.map((sec) => (
+      <>
+        <h2>{sec.h}</h2>
+        {sec.p.map((text) => <p set:html={fill(text)} />)}
+      </>
+    ))}
+  </section>
+</Layout>

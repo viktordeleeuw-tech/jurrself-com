@@ -1,0 +1,90 @@
+{
+  "nav": { "home": "Inicio", "offer": "Oferta", "about": "Sobre mí", "contact": "Contacto", "menu": "Menú", "close": "Cerrar menú", "language": "Idioma" },
+  "footer": { "privacy": "Privacidad", "cookies": "Configuración de cookies", "location": "Jávea, España" },
+  "cookie": { "label": "Configuración de cookies", "text": "Con tu consentimiento usamos cookies analíticas para mejorar este sitio web.", "privacy": "Política de privacidad", "necessary": "Necesarias", "always": "(siempre activas)", "stats": "Estadísticas", "save": "Guardar", "accept": "Aceptar", "reject": "Rechazar", "configure": "Configurar" },
+  "home": {
+    "title": "JurrSelf — Get out of your head. Get into your body.",
+    "description": "Descubre qué ocurre cuando tu cuerpo se pone bajo presión. Respiración, baño de hielo y entrenamiento físico en Jávea, guiado por Jurriaan.",
+    "hero": { "alt": "Jurriaan durante una sesión al atardecer en Jávea", "subtitle": "Descubre qué ocurre cuando tu cuerpo se pone bajo presión. Aprende a reconocer las señales. Aprende a usarlas.", "book": "Reserva tu sesión", "intro": "Primero, conocernos" },
+    "why": { "eyebrow": "Por qué JurrSelf", "title": "PRESSURE REVEALS.<br />TU CUERPO LO SABE PRIMERO.", "text": "Vivimos demasiado en la cabeza. JurrSelf te devuelve al cuerpo, a través del esfuerzo físico, la respiración y el frío. No para hablar del estrés. Para sentir lo que realmente ocurre. Reconocer. Dirigir." },
+    "split": { "alt": "Recuperación y respiración en silencio", "eyebrow": "De la cabeza al cuerpo", "title": "Don’t think it.<br />Feel it.", "text": "Respiración. Tensión. Control. Inquietud. Relajación. Primero experimentar. Luego reconocer. Después aprender a reajustar, no como teoría, sino como un cuerpo que te lo muestra por sí mismo." },
+    "method": {
+      "eyebrow": "El método",
+      "title": "El cuerpo como puerta de entrada. Dos formas.",
+      "adem": { "alt": "Sesión de respiración seguida de un baño de hielo", "title": "Respiración + Hielo", "text": "Sesión de respiración seguida de exposición al frío. Observar qué ocurre cuando aparece la tensión." },
+      "fysiek": { "alt": "Entrenamiento funcional con sacos de arena y trineo", "title": "Entrenamiento físico", "text": "Entrenamiento funcional 1 a 1 con sacos de arena, trineo y tu propio peso corporal. Una resistencia que hace visibles las reacciones automáticas." }
+    },
+    "principle": { "eyebrow": "Un principio recurrente", "text": "Aprendes a reconocer las señales físicas que muestran dónde te encuentras. Primero experimentar. Luego reconocer. Después aprender a reajustar, con herramientas que también usas fuera de la sesión." },
+    "offer": {
+      "eyebrow": "Oferta",
+      "experience": { "title": "JurrSelf Experience", "meta": "90–120 minutos · individual", "cta": "Reserva tu sesión", "text": "Una primera experiencia intensa centrada en el cuerpo, la respiración, la resistencia y la conciencia." },
+      "traject": { "title": "JurrSelf Trayecto", "meta": "5 sesiones · ± 60 minutos", "cta": "Ponte en contacto", "text": "Para quien quiere ir más allá de una sola experiencia y aprender de verdad a reconocer y aplicar los principios." }
+    },
+    "who": { "alt": "Jurriaan guía un entrenamiento en grupo", "eyebrow": "Quién te guía", "title": "Jurriaan", "text": "Ni gimnasio, ni concepto wellness, ni coaching tradicional. Jurriaan guía la experiencia, no como un héroe, ni como un gurú.", "link": "Más sobre Jurriaan" },
+    "gallery": { "eyebrow": "En imágenes", "alts": ["Entrenamiento funcional con trineo en Jávea", "Recuperación y relajación tras la sesión", "Preparando la respiración junto a la piscina", "Entrenamiento con sacos de arena al atardecer en Jávea"] },
+    "location": { "eyebrow": "Lugar y forma de trabajo", "title": "Jávea. Un lugar privado, sin distracciones innecesarias.", "text": "La respiración y el baño de hielo tienen lugar en un lugar privado. El entrenamiento físico también puede hacerse en el lugar que prefieras." },
+    "cta": { "title": "BREATHE.<br />MOVE.<br />NOTICE.", "button": "Reserva tu sesión" }
+  },
+  "offer": {
+    "title": "Oferta — JurrSelf",
+    "description": "Dos formas, una puerta de entrada: respiración y baño de hielo, o entrenamiento físico funcional 1 a 1. Descubre la JurrSelf Experience y el Trayecto.",
+    "hero": { "alt": "Grupo durante un entrenamiento físico", "eyebrow": "Oferta", "title": "Dos formas.<br />Una puerta de entrada." },
+    "adem": { "alt": "Sesión de respiración y baño de hielo", "eyebrow": "Método 01", "title": "Respiración + Hielo", "p1": "Una sesión de respiración guiada seguida de exposición al frío en un baño de hielo. No como un reto. No para demostrar lo fuerte que eres.", "p2": "Observas qué ocurre en tu cuerpo cuando aparece la tensión: respiración, tensión, control, inquietud, relajación." },
+    "fysiek": { "alt": "Recuperación tras el entrenamiento físico", "eyebrow": "Método 02", "title": "Entrenamiento físico", "p1": "Entrenamiento funcional 1 a 1: sacos de arena, trineo, tu propio peso corporal, movimiento natural, resistencia física.", "p2": "El cansancio y la resistencia se usan de forma consciente. Bajo presión se hacen visibles las reacciones automáticas, y aprendes a reconocerlas." },
+    "principle": { "eyebrow": "Principio recurrente", "title": "Flow, Fight, Flight, Freeze", "text": "Primero experimentar. Luego reconocer. Después aprender a reajustar. Te vas a casa con señales y herramientas concretas, que también puedes usar fuera de la sesión. El objetivo no es que dependas de un coach. El objetivo es que aprendas a observarte y dirigirte mejor." },
+    "science": {
+      "eyebrow": "Por qué funciona",
+      "title": "La ciencia detrás de la experiencia",
+      "lead": "La respiración y el frío no son modas. Son maneras de entrenar tu sistema nervioso, respaldadas por la investigación sobre regulación del estrés y recuperación.",
+      "cards": [
+        { "title": "Respiración", "text": "La respiración consciente activa el nervio vago, el nervio principal de tu sistema de reposo. Reduce tu frecuencia cardíaca y ayuda a tu cuerpo a pasar más rápido de la tensión a la relajación." },
+        { "title": "Exposición al frío", "text": "Una exposición breve y controlada al frío entrena tu respuesta al estrés. Aprendes a mantener la calma mientras tu cuerpo hace sonar la alarma, una habilidad que se traslada a los momentos de presión del día a día." },
+        { "title": "Esfuerzo físico", "text": "El esfuerzo funcional intenso saca a la superficie las reacciones automáticas: huir, luchar, bloquearse. Con acompañamiento aprendes a reconocer y reajustar esos patrones." }
+      ]
+    },
+    "book": "Reservar",
+    "experience": { "title": "JurrSelf Experience", "meta": "90–120 minutos · individual · reserva directa", "cta": "Reserva la experience", "text": "Una sesión individual. Una primera experiencia intensa centrada en el cuerpo, la respiración, la resistencia y la conciencia." },
+    "traject": { "title": "JurrSelf Trayecto", "meta": "5 sesiones · ± 60 minutos · a medida", "cta": "Ponte en contacto", "text": "Para quien quiere ir más allá de una sola experiencia y aprender de verdad a reconocer y aplicar los principios. Lo que mejor encaje contigo, lo hablamos primero en persona." }
+  },
+  "about": {
+    "title": "Sobre mí — JurrSelf",
+    "description": "Jurriaan guía la experiencia JurrSelf: ni gimnasio, ni concepto wellness, ni coaching tradicional. El cuerpo como puerta de entrada.",
+    "hero": { "alt": "Jurriaan junto a la costa en Jávea", "eyebrow": "Sobre mí", "title": "Jurriaan" },
+    "intro": { "title": "Ni gimnasio, ni concepto wellness, ni coaching tradicional.", "p": ["Creo que vivimos demasiado en la cabeza. No porque estemos bloqueados, a menudo funcionamos perfectamente. Pero hay mucho más que ganar en el contacto con tu propio cuerpo.", "Con JurrSelf uso el cuerpo como puerta de entrada: el esfuerzo físico, la respiración y el frío hacen sentir lo que ocurre cuando aparece la presión. Yo guío esa experiencia, no me subo al escenario.", "El objetivo no es que dependas de mí. El objetivo es que aprendas a observarte y dirigirte mejor, con herramientas que puedes usar en cualquier lugar."] },
+    "gallery": { "alts": ["Jurriaan guía una sesión", "Entrenamiento físico junto a la costa"] },
+    "cta": { "title": "¿Listo para sentir<br />lo que sabe tu cuerpo?", "button": "Reserva tu sesión" }
+  },
+  "contact": {
+    "title": "Contacto — JurrSelf",
+    "description": "Reserva tu sesión JurrSelf o conozcámonos primero. Rellena el formulario o ponte en contacto por WhatsApp o correo electrónico.",
+    "hero": { "eyebrow": "Contacto", "title": "Reserva tu sesión o<br />conozcámonos primero.", "lead": "Rellena el formulario y nos pondremos en contacto contigo personalmente para hablar de lo que mejor encaja, la Experience o el Trayecto." },
+    "form": { "name": "Nombre", "namePh": "Tu nombre", "email": "Correo electrónico", "emailPh": "tu@ejemplo.com", "message": "Mensaje", "messagePh": "Cuéntanos brevemente qué buscas: Experience, Trayecto, o primero tienes una pregunta.", "submit": "Enviar solicitud", "fail": "No se ha podido enviar. Escribe a info@jurrself.com." },
+    "confirm": { "thanks": "Gracias, {name}.", "text": "Nos pondremos en contacto contigo personalmente lo antes posible." },
+    "info": { "whatsapp": "WhatsApp", "note": "Para el Trayecto hablamos primero en persona sobre lo que mejor encaja.", "email": "Correo electrónico", "location": "Ubicación", "locationText": "Jávea, España.<br />Lugar privado, la dirección se facilita personalmente tras la reserva." },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "items": [
+        { "q": "¿Tengo que estar en forma para participar?", "a": "No. La intensidad se adapta a tu nivel. No se trata de rendimiento, sino de experimentar lo que ocurre en tu cuerpo." },
+        { "q": "¿Qué tengo que llevar?", "a": "Bañador, una toalla y ropa de abrigo para después. El resto, como el material para la respiración y el baño de hielo, está disponible." },
+        { "q": "¿Es seguro con una afección cardíaca o durante el embarazo?", "a": "Consulta siempre antes con tu médico. La respiración y la exposición al frío son intensas para el cuerpo y no son adecuadas para todo el mundo sin consulta previa." },
+        { "q": "¿Dónde se realiza la sesión?", "a": "En un lugar privado en Jávea. La dirección exacta te la damos personalmente tras tu reserva." },
+        { "q": "¿Cuál es la diferencia entre la Experience y el Trayecto?", "a": "La Experience es una sesión intensa para conocernos. El Trayecto son cinco sesiones para quien realmente quiere aprender a reconocer y aplicar los principios." }
+      ]
+    }
+  },
+  "privacy": {
+    "title": "Privacidad — JurrSelf",
+    "description": "Cómo trata JurrSelf tus datos y las cookies.",
+    "eyebrow": "Privacidad",
+    "heading": "Así tratamos<br />tus datos.",
+    "sections": [
+      { "h": "Quién es el responsable", "p": ["JurrSelf, Jávea (España). ¿Preguntas sobre tus datos? Escribe a {email}."] },
+      { "h": "Qué datos", "p": ["Si te pones en contacto mediante el formulario, WhatsApp o correo electrónico, recibimos tu nombre, tus datos de contacto y tu mensaje. Además, solo con tu consentimiento, medimos cómo se usa el sitio web (véase Cookies)."] },
+      { "h": "Para qué", "p": ["Únicamente para responder a tu consulta o reserva y para mejorar el sitio web. No vendemos ni compartimos tus datos con terceros con fines de marketing."] },
+      { "h": "Plazo de conservación", "p": ["Conservamos los datos de contacto solo el tiempo necesario para tramitar tu consulta o reserva, con un máximo de 2 años desde el último contacto, salvo que la ley exija un plazo más largo."] },
+      { "h": "Cookies y medición", "p": ["El almacenamiento necesario (tu elección sobre las cookies) está siempre activo. Las estadísticas (Google Analytics, cargado a través de Google Tag Manager) están desactivadas por defecto y solo se activan si pulsas Aceptar. Entonces medimos, por ejemplo, qué páginas se visitan y si se usa un enlace de correo electrónico, teléfono o WhatsApp. No usamos cookies publicitarias ni de marketing.", "Aceptar y Rechazar son igual de fáciles, y rechazar no afecta al uso del sitio web. Tu elección se guarda 6 meses en tu dispositivo; después te lo volvemos a preguntar. Puedes cambiarla o retirarla en cualquier momento en <strong>Configuración de cookies</strong>, al final de la página. Google puede tratar datos fuera de la UE; Google LLC está adherida al Marco de Privacidad de Datos UE-EE. UU."] },
+      { "h": "Base jurídica y destinatarios", "p": ["Tratamos los datos del formulario o del correo electrónico sobre la base de nuestro interés legítimo en responder a tu consulta y ejecutar un encargo. Las estadísticas solo las tratamos con tu consentimiento, que puedes retirar en cualquier momento. Los datos pueden ser tratados por nuestro proveedor de alojamiento (Vercel), nuestro servicio de correo (mijn.host) y, solo con tu consentimiento, Google (Analytics y Tag Manager). Con estos proveedores rigen contratos de encargo de tratamiento o cláusulas tipo."] },
+      { "h": "Tus derechos", "p": ["Puedes solicitar el acceso, la rectificación, la supresión, la limitación o la portabilidad de tus datos, oponerte al tratamiento y retirar el consentimiento otorgado. Escribe a {email}; respondemos en un plazo de 30 días. También puedes presentar una reclamación ante la Autoridad neerlandesa de Protección de Datos o ante la Agencia Española de Protección de Datos ({aepd})."] }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "nav": { "home": "Home", "offer": "Offer", "about": "About me", "contact": "Contact", "menu": "Menu", "close": "Close menu", "language": "Language" },
+  "footer": { "privacy": "Privacy", "cookies": "Cookie settings", "location": "Javea, Spain" },
+  "cookie": { "label": "Cookie settings", "text": "With your consent we use analytics cookies to improve this website.", "privacy": "Privacy statement", "necessary": "Necessary", "always": "(always active)", "stats": "Statistics", "save": "Save", "accept": "Accept", "reject": "Reject", "configure": "Customise" },
+  "home": {
+    "title": "JurrSelf — Get out of your head. Get into your body.",
+    "description": "Experience what happens when your body comes under pressure. Breathwork, ice bath and physical training in Javea, guided by Jurriaan.",
+    "hero": { "alt": "Jurriaan during a session at sunset in Javea", "subtitle": "Experience what happens when your body comes under pressure. Learn to recognise the signals. Learn to use them.", "book": "Book your session", "intro": "Meet first" },
+    "why": { "eyebrow": "Why JurrSelf", "title": "PRESSURE REVEALS.<br />YOUR BODY KNOWS FIRST.", "text": "People spend too much time in their heads. JurrSelf brings you back to your body, through physical effort, breathing and cold. Not to talk about stress. To feel what is actually happening. Recognise. Steer." },
+    "split": { "alt": "Recovery and breathing in stillness", "eyebrow": "From head to body", "title": "Don’t think it.<br />Feel it.", "text": "Breathing. Tension. Control. Restlessness. Relaxation. Experience first. Then recognise. Then learn to steer, not as theory, but as a body that shows it to you itself." },
+    "method": {
+      "eyebrow": "The method",
+      "title": "The body as the way in. Two forms.",
+      "adem": { "alt": "Breathwork session followed by an ice bath", "title": "Breath + Ice", "text": "A breathwork session followed by exposure to cold. Observing what happens when tension arises." },
+      "fysiek": { "alt": "Functional training with sandbags and a sled", "title": "Physical Training", "text": "Functional 1-on-1 training with sandbags, a sled and your own body weight. Resistance that makes automatic reactions visible." }
+    },
+    "principle": { "eyebrow": "A recurring principle", "text": "You learn to recognise the physical signals that show where you are. Experience first. Then recognise. Then learn to steer, with tools you also use outside the session." },
+    "offer": {
+      "eyebrow": "Offer",
+      "experience": { "title": "JurrSelf Experience", "meta": "90–120 minutes · individual", "cta": "Book your session", "text": "An intensive first experience centred on body, breathing, resistance and awareness." },
+      "traject": { "title": "JurrSelf Programme", "meta": "5 sessions · ± 60 minutes", "cta": "Get in touch", "text": "For those who want to go beyond a single experience and truly learn to recognise and apply the principles." }
+    },
+    "who": { "alt": "Jurriaan guiding a group training", "eyebrow": "Who guides you", "title": "Jurriaan", "text": "No gym, no wellness concept, no traditional coaching. Jurriaan guides the experience, not as a hero, not as a guru.", "link": "Read more about Jurriaan" },
+    "gallery": { "eyebrow": "In pictures", "alts": ["Functional training with a sled in Javea", "Recovery and relaxation after the session", "Preparing the breath by the pool", "Sandbag training at sunset in Javea"] },
+    "location": { "eyebrow": "Location & approach", "title": "Javea. A private place, free of unnecessary distraction.", "text": "Breathwork and ice bath take place at a private location. Physical training can also take place at a location of your choice." },
+    "cta": { "title": "BREATHE.<br />MOVE.<br />NOTICE.", "button": "Book your session" }
+  },
+  "offer": {
+    "title": "Offer — JurrSelf",
+    "description": "Two forms, one way in: breathwork and ice bath, or functional 1-on-1 physical training. Discover the JurrSelf Experience and Programme.",
+    "hero": { "alt": "Group during physical training", "eyebrow": "Offer", "title": "Two forms.<br />One way in." },
+    "adem": { "alt": "Breathwork session and ice bath", "eyebrow": "Method 01", "title": "Breath + Ice", "p1": "A guided breathwork session followed by exposure to cold in an ice bath. Not as a challenge. Not to prove how strong you are.", "p2": "You observe what happens in your body when tension arises: breathing, tension, control, restlessness, relaxation." },
+    "fysiek": { "alt": "Recovery after physical training", "eyebrow": "Method 02", "title": "Physical Training", "p1": "Functional 1-on-1 training: sandbags, sled, your own body weight, natural movement, physical resistance.", "p2": "Fatigue and resistance are used deliberately. Under pressure, automatic reactions become visible, and you learn to recognise them." },
+    "principle": { "eyebrow": "Recurring principle", "title": "Flow, Fight, Flight, Freeze", "text": "Experience first. Then recognise. Then learn to steer. You go home with concrete signals and tools, usable outside the session too. The goal is not to become dependent on a coach. The goal is to learn to observe and steer yourself better." },
+    "science": {
+      "eyebrow": "Why it works",
+      "title": "The science behind the experience",
+      "lead": "Breathwork and cold are not trends. They are ways to train your nervous system, backed by research into stress regulation and recovery.",
+      "cards": [
+        { "title": "Breathing", "text": "Conscious breathing activates the vagus nerve, the main nerve of your rest system. It slows your heart rate and helps your body switch faster between tension and relaxation." },
+        { "title": "Cold exposure", "text": "Short, controlled exposure to cold trains your stress response. You learn to stay calm while your body sounds the alarm, a skill that carries over to high-pressure moments in daily life." },
+        { "title": "Physical load", "text": "Heavy, functional effort brings automatic reactions to the surface: flight, fight, freeze. Under guidance you learn to recognise and adjust those patterns." }
+      ]
+    },
+    "book": "Book",
+    "experience": { "title": "JurrSelf Experience", "meta": "90–120 minutes · individual · bookable directly", "cta": "Book the experience", "text": "One individual session. An intensive first experience centred on body, breathing, resistance and awareness." },
+    "traject": { "title": "JurrSelf Programme", "meta": "5 sessions · ± 60 minutes · tailor-made", "cta": "Get in touch", "text": "For those who want to go beyond a single experience and truly learn to recognise and apply the principles. What suits you best, we first discuss personally." }
+  },
+  "about": {
+    "title": "About me — JurrSelf",
+    "description": "Jurriaan guides the JurrSelf experience: no gym, no wellness concept, no traditional coaching. The body as the way in.",
+    "hero": { "alt": "Jurriaan by the coast in Javea", "eyebrow": "About me", "title": "Jurriaan" },
+    "intro": { "title": "No gym, no wellness concept, no traditional coaching.", "p": ["I believe people spend too much time in their heads. Not because they are stuck, they often function perfectly well. But there is more to gain from contact with your own body.", "With JurrSelf I use the body as the way in: physical effort, breathing and cold make it tangible what happens once pressure arises. I guide that experience, I am not on stage.", "The goal is not that you become dependent on me. The goal is that you learn to observe and steer yourself better, with tools you can use anywhere."] },
+    "gallery": { "alts": ["Jurriaan guiding a session", "Physical training by the coast"] },
+    "cta": { "title": "Ready to feel<br />what your body knows?", "button": "Book your session" }
+  },
+  "contact": {
+    "title": "Contact — JurrSelf",
+    "description": "Book your JurrSelf session or get to know each other first. Fill in the form or get in touch via WhatsApp or email.",
+    "hero": { "eyebrow": "Contact", "title": "Book your session or<br />meet first.", "lead": "Fill in the form and we will personally get in touch to discuss what suits you best, the Experience or the Programme." },
+    "form": { "name": "Name", "namePh": "Your name", "email": "Email", "emailPh": "you@example.com", "message": "Message", "messagePh": "Briefly tell us what you are looking for: Experience, Programme, or you have a question first.", "submit": "Send request", "fail": "Sending failed. Email info@jurrself.com." },
+    "confirm": { "thanks": "Thank you, {name}.", "text": "We will get back to you personally as soon as possible." },
+    "info": { "whatsapp": "WhatsApp", "note": "For the Programme we first discuss personally what suits you best.", "email": "Email", "location": "Location", "locationText": "Javea, Spain.<br />Private location, address shared personally after booking." },
+    "faq": {
+      "eyebrow": "Frequently asked questions",
+      "items": [
+        { "q": "Do I need to be fit to take part?", "a": "No. The intensity adapts to your level. It is not about performance, but about experiencing what happens in your body." },
+        { "q": "What should I bring?", "a": "Swimwear, a towel and warm clothes for afterwards. The rest, such as breathwork equipment and the ice bath, is provided." },
+        { "q": "Is this safe with a heart condition or during pregnancy?", "a": "Always consult your doctor first. Breathwork and cold exposure are intense for the body and not suitable for everyone without consultation." },
+        { "q": "Where does the session take place?", "a": "At a private location in Javea. You will receive the exact address personally after booking." },
+        { "q": "What is the difference between the Experience and the Programme?", "a": "The Experience is one intensive session to get acquainted. The Programme is five sessions for those who truly want to learn to recognise and apply the principles." }
+      ]
+    }
+  },
+  "privacy": {
+    "title": "Privacy — JurrSelf",
+    "description": "How JurrSelf handles your data and cookies.",
+    "eyebrow": "Privacy",
+    "heading": "This is how we handle<br />your data.",
+    "sections": [
+      { "h": "Who is responsible", "p": ["JurrSelf, Javea (Spain). Questions about your data? Email {email}."] },
+      { "h": "What data", "p": ["If you contact us via the form, WhatsApp or email, we receive your name, contact details and message. In addition, only with your consent, we measure how the website is used (see Cookies)."] },
+      { "h": "Purpose", "p": ["Only to respond to your enquiry or booking, and to improve the website. We do not sell or share your data with third parties for marketing."] },
+      { "h": "Retention", "p": ["We keep contact details no longer than necessary to handle your enquiry or booking, with a maximum of 2 years after the last contact, unless the law requires a longer period."] },
+      { "h": "Cookies and measuring", "p": ["Necessary storage (your cookie choice) is always active. Statistics (Google Analytics, loaded via Google Tag Manager) are off by default and only switch on if you click Accept. We then measure, for example, which pages are visited and whether an email, phone or WhatsApp link is used. We do not use advertising or marketing cookies.", "Accepting and Rejecting are equally easy, and rejecting has no effect on your use of the website. Your choice is stored on your device for 6 months; after that we ask again. You can change or withdraw it at any time via <strong>Cookie settings</strong> at the bottom of the page. Google may process data outside the EU; Google LLC falls under the EU-US Data Privacy Framework."] },
+      { "h": "Legal basis and recipients", "p": ["We process data from the form or email on the basis of our legitimate interest in answering your question and carrying out an assignment. We process statistics only on the basis of your consent, which you can withdraw at any time. Data may be processed by our hosting provider (Vercel), our email service (mijn.host) and, only with your consent, Google (Analytics and Tag Manager). Data processing agreements or standard terms apply with these parties."] },
+      { "h": "Your rights", "p": ["You can request access, correction, deletion, restriction or portability of your data, object to processing, and withdraw consent you gave earlier. Email {email}; we respond within 30 days. You may also file a complaint with the Dutch Data Protection Authority or the Spanish regulator ({aepd})."] }
+    ]
+  }
+}

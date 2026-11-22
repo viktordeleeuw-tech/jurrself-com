@@ -1,18 +1,23 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/images/logo-jurrself.png';
+import { t, pagePath, type Lang } from '../i18n/index.ts';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang);
 ---
 
 <footer class="jf-footer">
   <Image src={logo} alt="JurrSelf" width={88} height={22} />
   <div class="jf-footer__links">
-    <a href="/aanbod">Aanbod</a>
-    <a href="/over-mij">Over mij</a>
-    <a href="/contact">Contact</a>
-    <a href="/privacy">Privacy</a>
-    <button type="button" class="jf-cookie-open" data-cookie-open>Cookie-instellingen</button>
+    <a href={pagePath(lang, 'offer')}>{d.nav.offer}</a>
+    <a href={pagePath(lang, 'about')}>{d.nav.about}</a>
+    <a href={pagePath(lang, 'contact')}>{d.nav.contact}</a>
+    <a href={pagePath(lang, 'privacy')}>{d.footer.privacy}</a>
+    <button type="button" class="jf-cookie-open" data-cookie-open>{d.footer.cookies}</button>
   </div>
-  <p class="jf-footer__location">Javea, Spanje</p>
+  <p class="jf-footer__location">{d.footer.location}</p>
   <p class="jf-footer__powered">
     <a href="https://lioncraft.nl/?utm_source=jurrself.com&utm_medium=referral&utm_campaign=powered-by" target="_blank" rel="noopener">
       <img src="/lioncraft-icon.svg" alt="" width="14" height="18" />

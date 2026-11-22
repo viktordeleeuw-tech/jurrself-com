@@ -1,17 +1,22 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/images/logo-jurrself-white.png';
+import { t, pagePath, langs, labels, type Lang, type PageKey } from '../i18n/index.ts';
+
+interface Props { lang: Lang; page?: PageKey }
+const { lang, page } = Astro.props;
+const d = t(lang);
 
 const links = [
-  { href: '/', label: 'Home' },
-  { href: '/aanbod', label: 'Aanbod' },
-  { href: '/over-mij', label: 'Over mij' },
-  { href: '/contact', label: 'Contact' },
+  { href: pagePath(lang), label: d.nav.home },
+  { href: pagePath(lang, 'offer'), label: d.nav.offer },
+  { href: pagePath(lang, 'about'), label: d.nav.about },
+  { href: pagePath(lang, 'contact'), label: d.nav.contact },
 ];
 ---
 
 <nav class="jf-nav" id="site-nav">
-  <a href="/" aria-label="JurrSelf" class="jf-nav__logo">
+  <a href={pagePath(lang)} aria-label="JurrSelf" class="jf-nav__logo">
     <Image src={logo} alt="JurrSelf" width={112} height={28} />
   </a>
   <button
@@ -20,23 +25,24 @@ const links = [
     id="nav-toggle"
     aria-expanded="false"
     aria-controls="nav-panel"
-    aria-label="Menu"
+    aria-label={d.nav.menu}
   >
     <span></span><span></span><span></span>
   </button>
   <div class="jf-nav__right" id="nav-panel">
-    <button type="button" class="jf-nav__close" id="nav-close" aria-label="Sluit menu">
+    <button type="button" class="jf-nav__close" id="nav-close" aria-label={d.nav.close}>
       <span></span><span></span>
     </button>
     <div class="jf-nav__links">
       {links.map((link) => <a href={link.href}>{link.label}</a>)}
     </div>
-    <div class="jf-nav__lang">
-      <a href="#" aria-current="true">NL</a>
-      <span>/</span>
-      <a href="#">EN</a>
-      <span>/</span>
-      <a href="#">ES</a>
+    <div class="jf-nav__lang" role="group" aria-label={d.nav.language}>
+      {langs.map((l, i) => (
+        <>
+          {i > 0 && <span aria-hidden="true">/</span>}
+          <a href={pagePath(l, page)} hreflang={l} lang={l} aria-current={l === lang ? 'true' : undefined}>{labels[l]}</a>
+        </>
+      ))}
     </div>
   </div>
   <div class="jf-nav__backdrop" id="nav-backdrop"></div>
@@ -58,6 +64,13 @@ const links = [
     const open = nav?.classList.toggle('jf-nav--open');
     toggle.setAttribute('aria-expanded', String(Boolean(open)));
     document.body.classList.toggle('jf-no-scroll', Boolean(open));
+  });
+
+  // Handmatige taalkeuze onthouden (1 jaar): Vercel redirect "/" alleen als dit cookie ontbreekt.
+  document.querySelectorAll<HTMLAnchorElement>('.jf-nav__lang a').forEach((a) => {
+    a.addEventListener('click', () => {
+      document.cookie = `lang=${a.hreflang}; path=/; max-age=31536000; SameSite=Lax`;
+    });
   });
 
   backdrop?.addEventListener('click', closeMenu);

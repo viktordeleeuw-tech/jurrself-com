@@ -1,0 +1,20 @@
+---
+import { baseLang, langs, pageKeys, slugs, type Lang, type PageKey } from '../../i18n/index.ts';
+import Home from '../../views/Home.astro';
+import Offer from '../../views/Offer.astro';
+import About from '../../views/About.astro';
+import Contact from '../../views/Contact.astro';
+import Privacy from '../../views/Privacy.astro';
+
+// Nederlands en Spaans: /nl/… en /es/…; Engels (basistaal) staat op de losse bestanden in src/pages.
+export function getStaticPaths() {
+  return langs
+    .filter((l) => l !== baseLang)
+    .flatMap((lang) => pageKeys.map((page) => ({ params: { lang, slug: slugs[page][lang] || undefined }, props: { lang, page } })));
+}
+
+const { lang, page } = Astro.props as { lang: Lang; page: PageKey };
+const views = { home: Home, offer: Offer, about: About, contact: Contact, privacy: Privacy };
+const View = views[page];
+---
+<View lang={lang} />

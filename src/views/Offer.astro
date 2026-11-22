@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SplitSection from '../components/SplitSection.astro';
+import OfferCard from '../components/OfferCard.astro';
+import { Image } from 'astro:assets';
+import { t, pagePath, type Lang } from '../i18n/index.ts';
+import imgHero from '../assets/images/groep-fysieke-training.jpg';
+import imgAdemIjs from '../assets/images/ademsessie-ijsbad-kou.jpeg';
+import imgFysiek from '../assets/images/herstel-fysieke-training.jpg';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang).offer;
+const contact = pagePath(lang, 'contact');
+---
+
+<Layout title={d.title} description={d.description} lang={lang} page="offer">
+  <section class="jf-hero jf-hero--page">
+    <Image
+      src={imgHero}
+      alt={d.hero.alt}
+      class="jf-hero__media jf-hero__media--soft"
+      width={1920}
+      widths={[640, 1280, 1920]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="jf-hero__overlay jf-hero__overlay--soft"></div>
+    <div class="jf-hero__content">
+      <p class="jf-eyebrow jf-eyebrow--hero">{d.hero.eyebrow}</p>
+      <h1 class="jf-h1" set:html={d.hero.title} />
+    </div>
+  </section>
+
+  <SplitSection id="adem-ijs" image={imgAdemIjs} alt={d.adem.alt} imageSide="left" mobileFirst="text" size="tall">
+    <p class="jf-eyebrow">{d.adem.eyebrow}</p>
+    <h2 class="jf-h2 jf-h2--tight">{d.adem.title}</h2>
+    <p class="jf-body">{d.adem.p1}</p>
+    <p class="jf-body">{d.adem.p2}</p>
+  </SplitSection>
+
+  <SplitSection id="fysieke-training" image={imgFysiek} alt={d.fysiek.alt} dark imageSide="left" mobileFirst="text" size="tall">
+    <p class="jf-eyebrow jf-eyebrow--on-dark">{d.fysiek.eyebrow}</p>
+    <h2 class="jf-h2 jf-h2--tight">{d.fysiek.title}</h2>
+    <p class="jf-body jf-body--on-dark">{d.fysiek.p1}</p>
+    <p class="jf-body jf-body--on-dark">{d.fysiek.p2}</p>
+  </SplitSection>
+
+  <section class="jf-container jf-container--narrow jf-aanbod-principle">
+    <p class="jf-eyebrow jf-eyebrow--gap">{d.principle.eyebrow}</p>
+    <h3 class="jf-h3">{d.principle.title}</h3>
+    <p class="jf-lead jf-lead--sm">{d.principle.text}</p>
+  </section>
+
+  <section class="jf-container jf-pt-md jf-pb-md">
+    <p class="jf-eyebrow jf-eyebrow--gap">{d.science.eyebrow}</p>
+    <h2 class="jf-h2 jf-h2--tight jf-max-w-lg">{d.science.title}</h2>
+    <p class="jf-lead jf-lead--sm jf-mt-lg jf-mb-lg">{d.science.lead}</p>
+    <div class="jf-cards jf-cards--three">
+      {d.science.cards.map((c) => (
+        <div class="jf-science-card">
+          <h3>{c.title}</h3>
+          <p>{c.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="jf-container jf-aanbod-book">
+    <p class="jf-eyebrow jf-eyebrow--divider">{d.book}</p>
+  </section>
+
+  <section class="jf-container jf-cards jf-pb-lg">
+    <OfferCard
+      title={d.experience.title}
+      meta={d.experience.meta}
+      href={`${contact}?type=experience`}
+      ctaLabel={d.experience.cta}
+      ctaVariant="dark"
+      large
+    >
+      {d.experience.text}
+    </OfferCard>
+    <OfferCard
+      title={d.traject.title}
+      meta={d.traject.meta}
+      href={`${contact}?type=traject`}
+      ctaLabel={d.traject.cta}
+      ctaVariant="outline-dark"
+      large
+    >
+      {d.traject.text}
+    </OfferCard>
+  </section>
+</Layout>

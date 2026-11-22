@@ -1,0 +1,158 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import SplitSection from '../components/SplitSection.astro';
+import PhotoCard from '../components/PhotoCard.astro';
+import OfferCard from '../components/OfferCard.astro';
+import Button from '../components/Button.astro';
+import { t, pagePath, type Lang } from '../i18n/index.ts';
+import imgHero from '../assets/images/jurriaan-sessie-zonsondergang-javea.jpg';
+import imgSplit from '../assets/images/herstel-ademhaling-stilte.jpg';
+import imgAdemIjs from '../assets/images/ademsessie-ijsbad.jpeg';
+import imgFysiek from '../assets/images/fysieke-training-zandzakken-slee.jpg';
+import imgJurriaan from '../assets/images/jurriaan-groepstraining.jpg';
+import imgGallery1 from '../assets/images/sleeptraining-sandbag-parking.jpg';
+import imgGallery2 from '../assets/images/herstel-na-sessie-ontspanning.jpg';
+import imgGallery3 from '../assets/images/ademhaling-voorbereiding-zwembad.jpg';
+import imgGallery4 from '../assets/images/sandbag-wandeling-zonsondergang-javea.jpg';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = t(lang).home;
+const contact = pagePath(lang, 'contact');
+const offer = pagePath(lang, 'offer');
+const galleryImgs = [imgGallery1, imgGallery2, imgGallery3, imgGallery4];
+---
+
+<Layout title={d.title} description={d.description} lang={lang} page="home">
+  <!-- HERO -->
+  <section class="jf-hero jf-hero--full">
+    <Image
+      src={imgHero}
+      alt={d.hero.alt}
+      class="jf-hero__media"
+      width={1920}
+      widths={[640, 1280, 1920, 2560]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="jf-hero__overlay"></div>
+    <div class="jf-hero__content">
+      <h1 class="jf-display">GET OUT OF<br />YOUR HEAD.<br />GET INTO<br />YOUR BODY.</h1>
+      <div class="jf-hero__intro">
+        <p class="jf-hero__subtitle">{d.hero.subtitle}</p>
+        <div class="jf-hero__actions">
+          <Button href={contact} variant="light">{d.hero.book}</Button>
+          <Button href={`${contact}#kennismaken`} variant="outline-light">{d.hero.intro}</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAAROM JURRSELF -->
+  <section class="jf-container jf-section--intro">
+    <p class="jf-eyebrow">{d.why.eyebrow}</p>
+    <h2 class="jf-h2 jf-h2--lg" set:html={d.why.title} />
+    <p class="jf-lead">{d.why.text}</p>
+  </section>
+
+  <!-- VAN HOOFD NAAR LICHAAM -->
+  <SplitSection image={imgSplit} alt={d.split.alt} dark imageSide="left" mobileFirst="image">
+    <p class="jf-eyebrow jf-eyebrow--on-dark">{d.split.eyebrow}</p>
+    <h3 class="jf-h3 jf-h3--narrow" set:html={d.split.title} />
+    <p class="jf-body jf-body--on-dark">{d.split.text}</p>
+  </SplitSection>
+
+  <!-- DE TWEE METHODES -->
+  <section class="jf-container jf-pt-lg jf-pb-md">
+    <p class="jf-eyebrow">{d.method.eyebrow}</p>
+    <h2 class="jf-h2 jf-h2--wide">{d.method.title}</h2>
+    <div class="jf-cards">
+      <PhotoCard
+        href={`${offer}#adem-ijs`}
+        image={imgAdemIjs}
+        alt={d.method.adem.alt}
+        title={d.method.adem.title}
+        text={d.method.adem.text}
+      />
+      <PhotoCard
+        href={`${offer}#fysieke-training`}
+        image={imgFysiek}
+        alt={d.method.fysiek.alt}
+        title={d.method.fysiek.title}
+        text={d.method.fysiek.text}
+      />
+    </div>
+  </section>
+
+  <!-- FLOW FIGHT FLIGHT FREEZE -->
+  <section class="jf-container jf-container--narrow jf-pt-md jf-pb-lg jf-border-top">
+    <p class="jf-eyebrow jf-eyebrow--gap">{d.principle.eyebrow}</p>
+    <div class="jf-fff">
+      <div class="jf-fff__item"><span>FLOW</span></div>
+      <div class="jf-fff__item"><span>FIGHT</span></div>
+      <div class="jf-fff__item"><span>FLIGHT</span></div>
+      <div class="jf-fff__item"><span>FREEZE</span></div>
+    </div>
+    <p class="jf-lead jf-lead--narrow jf-mt-lg">{d.principle.text}</p>
+  </section>
+
+  <!-- AANBOD TEASER -->
+  <section class="jf-container jf-pb-lg">
+    <p class="jf-eyebrow jf-eyebrow--gap">{d.offer.eyebrow}</p>
+    <div class="jf-cards">
+      <OfferCard
+        title={d.offer.experience.title}
+        meta={d.offer.experience.meta}
+        href={contact}
+        ctaLabel={d.offer.experience.cta}
+        ctaVariant="dark"
+      >
+        {d.offer.experience.text}
+      </OfferCard>
+      <OfferCard
+        title={d.offer.traject.title}
+        meta={d.offer.traject.meta}
+        href={contact}
+        ctaLabel={d.offer.traject.cta}
+        ctaVariant="outline-dark"
+      >
+        {d.offer.traject.text}
+      </OfferCard>
+    </div>
+  </section>
+
+  <!-- JURRIAAN TEASER -->
+  <SplitSection image={imgJurriaan} alt={d.who.alt} imageSide="left" mobileFirst="text" size="medium">
+    <p class="jf-eyebrow">{d.who.eyebrow}</p>
+    <h3 class="jf-h3">{d.who.title}</h3>
+    <p class="jf-body">{d.who.text}</p>
+    <a href={pagePath(lang, 'about')} class="jf-link-underline">{d.who.link}</a>
+  </SplitSection>
+
+  <!-- IN BEELD -->
+  <section class="jf-container jf-pt-lg jf-pb-lg">
+    <p class="jf-eyebrow jf-eyebrow--gap">{d.gallery.eyebrow}</p>
+    <div class="jf-gallery">
+      {galleryImgs.map((img, i) => (
+        <div class="jf-gallery__item">
+          <Image src={img} alt={d.gallery.alts[i]} class="jf-photo" width={640} widths={[320, 480, 640]} sizes="(min-width: 768px) 25vw, 50vw" />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- LOCATIE -->
+  <section class="jf-band">
+    <p class="jf-eyebrow jf-eyebrow--on-dark">{d.location.eyebrow}</p>
+    <h2 class="jf-band__title">{d.location.title}</h2>
+    <p class="jf-band__text">{d.location.text}</p>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="jf-band jf-band--tall jf-band--transparent">
+    <h2 class="jf-cta-title" set:html={d.cta.title} />
+    <Button href={contact} variant="dark">{d.cta.button}</Button>
+  </section>
+</Layout>
