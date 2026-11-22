@@ -1,0 +1,17 @@
+# JurrSelf
+
+> JurrSelf is a guided experience in Javea (Spain) where the body is the way in: breathwork, ice bath and physical training, guided by Jurriaan. No gym, no wellness concept, no traditional coaching.
+
+## Pages
+- [Home](https://jurrself.com/): what JurrSelf is and who it is for.
+- [Offer](https://jurrself.com/offer): the JurrSelf Experience (breathwork and ice bath) and the Programme (functional 1-on-1 physical training).
+- [About](https://jurrself.com/about): Jurriaan and how he guides.
+- [Contact](https://jurrself.com/contact): book a session or get to know each other first, via the form, WhatsApp or email.
+
+## Other languages
+- Nederlands: [Home](https://jurrself.com/nl/), [Aanbod](https://jurrself.com/nl/aanbod), [Over mij](https://jurrself.com/nl/over-mij), [Contact](https://jurrself.com/nl/contact)
+- Español: [Inicio](https://jurrself.com/es/), [Oferta](https://jurrself.com/es/oferta), [Sobre mí](https://jurrself.com/es/sobre-mi), [Contacto](https://jurrself.com/es/contacto)
+
+## Facts
+- Location: Javea, Spain.
+- Site languages: English (default, at /), Dutch (/nl/) and Spanish (/es/).
